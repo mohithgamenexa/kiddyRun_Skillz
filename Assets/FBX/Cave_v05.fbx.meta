@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 76794a78426e849409aea781e186797c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group80
+    100004: group87
+    100006: polySurface1497
+    100008: polySurface1498
+    100010: CaveN1Curve
+    100012: RailtrackN1Curve
+    100014: CaveN
+    100016: group132_pPipe8
+    100018: RailtrackN1
+    100020: Cave_Water1
+    100022: Cave_Water2
+    100024: RailtrackN1Curve1
+    100026: RailtrackN1Curve2
+    100028: Cave_Water3
+    400000: //RootNode
+    400002: group80
+    400004: group87
+    400006: polySurface1497
+    400008: polySurface1498
+    400010: CaveN1Curve
+    400012: RailtrackN1Curve
+    400014: CaveN
+    400016: group132_pPipe8
+    400018: RailtrackN1
+    400020: Cave_Water1
+    400022: Cave_Water2
+    400024: RailtrackN1Curve1
+    400026: RailtrackN1Curve2
+    400028: Cave_Water3
+    2100000: lambert148
+    2100002: lambert147
+    2100004: lambert1
+    2100006: lambert162
+    2100008: lambert163
+    2100010: lambert167
+    2100012: lambert168
+    2100014: lambert169
+    2100016: lambert170
+    2100018: lambert171
+    2300000: group80
+    2300002: group87
+    2300004: polySurface1497
+    2300006: polySurface1498
+    2300008: CaveN1Curve
+    2300010: RailtrackN1Curve
+    2300012: group132_pPipe8
+    2300014: RailtrackN1
+    2300016: Cave_Water1
+    2300018: Cave_Water2
+    2300020: RailtrackN1Curve1
+    2300022: RailtrackN1Curve2
+    2300024: Cave_Water3
+    3300000: group80
+    3300002: group87
+    3300004: polySurface1497
+    3300006: polySurface1498
+    3300008: CaveN1Curve
+    3300010: RailtrackN1Curve
+    3300012: group132_pPipe8
+    3300014: RailtrackN1
+    3300016: Cave_Water1
+    3300018: Cave_Water2
+    3300020: RailtrackN1Curve1
+    3300022: RailtrackN1Curve2
+    3300024: Cave_Water3
+    4300000: group87
+    4300002: group80
+    4300004: polySurface1497
+    4300006: polySurface1498
+    4300008: CaveN1Curve
+    4300010: RailtrackN1Curve
+    4300012: RailtrackN1
+    4300014: group132_pPipe8
+    4300016: RailtrackN1Curve1
+    4300018: RailtrackN1Curve2
+    4300020: Cave_Water2
+    4300022: Cave_Water1
+    4300024: Cave_Water3
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

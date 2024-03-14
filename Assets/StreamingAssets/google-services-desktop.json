@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "755214032654",
+    "firebase_url": "https://blocky-runner.firebaseio.com",
+    "project_id": "blocky-runner",
+    "storage_bucket": "blocky-runner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755214032654:android:da6858ab1822923e",
+        "android_client_info": {
+          "package_name": "com.blocky.runner.free"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRn9cRTAL_Yupr4ltzVK2rO5Fvkjex1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755214032654-722dacqo0m8jjfe0jatp3ge4nijbcueh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

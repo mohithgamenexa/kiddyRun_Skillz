@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: 45eaa3c920846e845b7ee82e68fa6f95
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bus_mesh
+    100002: Coin
+    100004: Jump01
+    100006: Jump02
+    100008: Jump03
+    100010: MiniVan
+    100012: //RootNode
+    100014: phoneBooth
+    100016: pPlane5
+    100018: pPlane6
+    100020: RoadBlocks
+    100022: rubbish_truck
+    100024: Slide02
+    100026: taxi_mesh
+    100028: Truck_yellow
+    100030: Vehicles
+    100032: Wagon_green
+    100034: BR_Jump01
+    100036: BR_Jump02
+    100038: BR_Jump03
+    100040: BR_pPlane5
+    100042: BR_pPlane6
+    100044: BR_Slide02
+    400000: Bus_mesh
+    400002: Coin
+    400004: Jump01
+    400006: Jump02
+    400008: Jump03
+    400010: MiniVan
+    400012: //RootNode
+    400014: phoneBooth
+    400016: pPlane5
+    400018: pPlane6
+    400020: RoadBlocks
+    400022: rubbish_truck
+    400024: Slide02
+    400026: taxi_mesh
+    400028: Truck_yellow
+    400030: Vehicles
+    400032: Wagon_green
+    400034: BR_Jump01
+    400036: BR_Jump02
+    400038: BR_Jump03
+    400040: BR_pPlane5
+    400042: BR_pPlane6
+    400044: BR_Slide02
+    2100000: BlocksMat
+    2100002: lambert109
+    2100004: BlocksMat1
+    2100006: BlocksMat3
+    2100008: BlocksMat5
+    2300000: Bus_mesh
+    2300002: Coin
+    2300004: Jump01
+    2300006: Jump02
+    2300008: Jump03
+    2300010: MiniVan
+    2300012: phoneBooth
+    2300014: pPlane5
+    2300016: pPlane6
+    2300018: rubbish_truck
+    2300020: Slide02
+    2300022: taxi_mesh
+    2300024: Truck_yellow
+    2300026: Wagon_green
+    2300028: BR_Jump01
+    2300030: BR_Jump02
+    2300032: BR_Jump03
+    2300034: BR_pPlane5
+    2300036: BR_pPlane6
+    2300038: BR_Slide02
+    3300000: Bus_mesh
+    3300002: Coin
+    3300004: Jump01
+    3300006: Jump02
+    3300008: Jump03
+    3300010: MiniVan
+    3300012: phoneBooth
+    3300014: pPlane5
+    3300016: pPlane6
+    3300018: rubbish_truck
+    3300020: Slide02
+    3300022: taxi_mesh
+    3300024: Truck_yellow
+    3300026: Wagon_green
+    3300028: BR_Jump01
+    3300030: BR_Jump02
+    3300032: BR_Jump03
+    3300034: BR_pPlane5
+    3300036: BR_pPlane6
+    3300038: BR_Slide02
+    4300000: Jump03
+    4300002: Slide02
+    4300004: Jump02
+    4300006: Jump01
+    4300008: pPlane5
+    4300010: pPlane6
+    4300012: Wagon_green
+    4300014: Truck_yellow
+    4300016: Bus_mesh
+    4300018: taxi_mesh
+    4300020: rubbish_truck
+    4300022: MiniVan
+    4300024: Coin
+    4300026: phoneBooth
+    4300028: BR_Slide02
+    4300030: BR_Jump02
+    4300032: BR_pPlane6
+    4300034: BR_pPlane5
+    4300036: BR_Jump01
+    4300038: BR_Jump03
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519ea7e023537494f99dd2e47ce184e9, type: 3}
+  m_Name: DESERT
+  m_EditorClassIdentifier: 
+  zones:
+  - name: city
+    Length: 20
+    isContineous: 0
+    envAssets:
+    - {fileID: 1080919583801660337, guid: ba1ca3e9d6c6c844fa387b5e79a23f8e, type: 3}
+    - {fileID: 1080919583801660337, guid: ba1ca3e9d6c6c844fa387b5e79a23f8e, type: 3}
+  curvEnvAssets:
+  - {fileID: 1598084330787577909, guid: b9760e2253c95cc43baeda50019954c1, type: 3}
+  - {fileID: 8894546653609990086, guid: 1ce5b479afff028439fc240522743d23, type: 3}
+  - {fileID: 3217102889935688191, guid: 43adc19357e18b54898f5d337c346868, type: 3}
+  - {fileID: 7888205209098449099, guid: aad2e6f957c6f9146ae8b6c233bcdbc5, type: 3}
+  rightCurvEnvAssets:
+  - {fileID: 1198124653406954750, guid: 01d9fdca04e7a7143b5c80b910dd9c46, type: 3}
+  - {fileID: 1198124653406954750, guid: c8c8f11544072b14eb093330cf406ad9, type: 3}
+  - {fileID: 1198124653406954750, guid: 17b849c15049d024c8b4148a3c1a22ae, type: 3}
+  - {fileID: 1198124653406954750, guid: 9d32180a6cb63b149bc275b09f87c844, type: 3}
+  Truck: {fileID: 1045313335132020, guid: 58674de69dcaae343b3f2a4528c2a905, type: 3}
+  BusIdle: {fileID: 98, guid: 8537587bd54a16943a712b994e90e3d8, type: 3}
+  busMove: {fileID: 1418952222982140, guid: a4ed4fdae9077714fb6b210efbd5317f, type: 3}
+  carIdle: {fileID: 8828226620725517660, guid: bed7ceefc6dd7444ca0a4f0157ac4142, type: 3}
+  carMove: {fileID: 6992061235537198888, guid: 38bf629cec9e43f45a27dc57513bebfb, type: 3}
+  HudleJump: {fileID: 1094485470762422, guid: 9bf8cb276e763764e95d26e3f37061c9, type: 3}
+  HudleDow: {fileID: 1419557129835388, guid: 3ef8fa44b68fec44ba9c59162ea9ba83, type: 3}
+  HudleTwoWay: {fileID: 114, guid: 68008b0bf2ef6d84d88271122a47685e, type: 3}
+  Blocker: {fileID: 1094485470762422, guid: b8695aeb255962647b5ad89fdf9c6e00, type: 3}

@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 482f5304e4797894facf8eedd3b9e606
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cave_obstacles1
+    100002: Cave_obstacles10
+    100004: Cave_obstacles14
+    100006: Cave_obstacles15
+    100008: Cave_obstacles16
+    100010: Cave_obstacles2
+    100012: //RootNode
+    100014: Cave_obstacles3
+    100016: Cave_obstacles4
+    100018: group119
+    100020: group120
+    100022: group122
+    100024: group123
+    100026: group124
+    100028: group125
+    100030: group127
+    100032: group128
+    100034: pCylinder99
+    100036: pCylinder99 1
+    100038: pCylinder99 2
+    100040: pCylinder99 3
+    100042: pCylinder99 4
+    100044: pCylinder99 5
+    100046: pCylinder99 6
+    100048: pCylinder99 7
+    100050: pSphere32
+    100052: pSphere32 1
+    100054: pSphere32 2
+    100056: pSphere32 3
+    100058: pSphere32 4
+    100060: pSphere32 5
+    100062: pSphere32 6
+    100064: pSphere32 7
+    100066: pSphere33
+    100068: pSphere34
+    100070: pSphere35
+    100072: pSphere36
+    400000: Cave_obstacles1
+    400002: Cave_obstacles10
+    400004: Cave_obstacles14
+    400006: Cave_obstacles15
+    400008: Cave_obstacles16
+    400010: Cave_obstacles2
+    400012: //RootNode
+    400014: Cave_obstacles3
+    400016: Cave_obstacles4
+    400018: group119
+    400020: group120
+    400022: group122
+    400024: group123
+    400026: group124
+    400028: group125
+    400030: group127
+    400032: group128
+    400034: pCylinder99
+    400036: pCylinder99 1
+    400038: pCylinder99 2
+    400040: pCylinder99 3
+    400042: pCylinder99 4
+    400044: pCylinder99 5
+    400046: pCylinder99 6
+    400048: pCylinder99 7
+    400050: pSphere32
+    400052: pSphere32 1
+    400054: pSphere32 2
+    400056: pSphere32 3
+    400058: pSphere32 4
+    400060: pSphere32 5
+    400062: pSphere32 6
+    400064: pSphere32 7
+    400066: pSphere33
+    400068: pSphere34
+    400070: pSphere35
+    400072: pSphere36
+    2100000: lambert163
+    2100002: lambert164
+    2300000: Cave_obstacles10
+    2300002: Cave_obstacles14
+    2300004: Cave_obstacles15
+    2300006: Cave_obstacles16
+    2300008: pCylinder99
+    2300010: pCylinder99 1
+    2300012: pCylinder99 2
+    2300014: pCylinder99 3
+    2300016: pCylinder99 4
+    2300018: pCylinder99 5
+    2300020: pCylinder99 6
+    2300022: pCylinder99 7
+    2300024: pSphere32
+    2300026: pSphere32 1
+    2300028: pSphere32 2
+    2300030: pSphere32 3
+    2300032: pSphere32 4
+    2300034: pSphere32 5
+    2300036: pSphere32 6
+    2300038: pSphere32 7
+    2300040: pSphere33
+    2300042: pSphere34
+    2300044: pSphere35
+    2300046: pSphere36
+    3300000: Cave_obstacles10
+    3300002: Cave_obstacles14
+    3300004: Cave_obstacles15
+    3300006: Cave_obstacles16
+    3300008: pCylinder99
+    3300010: pCylinder99 1
+    3300012: pCylinder99 2
+    3300014: pCylinder99 3
+    3300016: pCylinder99 4
+    3300018: pCylinder99 5
+    3300020: pCylinder99 6
+    3300022: pCylinder99 7
+    3300024: pSphere32
+    3300026: pSphere32 1
+    3300028: pSphere32 2
+    3300030: pSphere32 3
+    3300032: pSphere32 4
+    3300034: pSphere32 5
+    3300036: pSphere32 6
+    3300038: pSphere32 7
+    3300040: pSphere33
+    3300042: pSphere34
+    3300044: pSphere35
+    3300046: pSphere36
+    4300000: pCylinder99
+    4300002: pSphere32
+    4300004: pCylinder99
+    4300006: pSphere32
+    4300008: Cave_obstacles10
+    4300010: pCylinder99
+    4300012: pSphere32
+    4300014: pCylinder99
+    4300016: pSphere32
+    4300018: Cave_obstacles14
+    4300020: pCylinder99
+    4300022: pSphere32
+    4300024: pCylinder99
+    4300026: pSphere32
+    4300028: Cave_obstacles15
+    4300030: pCylinder99
+    4300032: pSphere32
+    4300034: pCylinder99
+    4300036: pSphere32
+    4300038: Cave_obstacles16
+    4300040: pSphere33
+    4300042: pSphere35
+    4300044: pSphere34
+    4300046: pSphere36
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
