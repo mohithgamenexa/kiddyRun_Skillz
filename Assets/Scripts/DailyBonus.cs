@@ -17,7 +17,7 @@ public class DailyBonus : MonoBehaviour
     public GameObject[] claimedObjs;
     void FixedUpdate()
     {
-        dayCheck();
+        //dayCheck();
     }
     bool isRwrdReady;
 

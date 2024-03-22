@@ -147,6 +147,7 @@ public class TrackManager : MonoBehaviour
 
     IEnumerator PlayIdle()
     {
+        PlayerPrefs.SetInt("key", 500);
         int prvNo = 0;
         int timer = 0;
         int targetTime = 20;
@@ -378,7 +379,9 @@ public class TrackManager : MonoBehaviour
     }
     IEnumerator WaitPlaceObsInStart()
     {
-        canGiveWrd = dailyBonus.CanDoDailyBattle();
+        //comment by Dharma
+        /*canGiveWrd = dailyBonus.CanDoDailyBattle();
+        dayWord = dailyBonus.dailyWords[PlayerPrefs.GetInt("wrd")];*/
       /*  if (canGiveWrd)
         {
             uimanager.instance.inGameWordTxt.transform.parent.gameObject.SetActive(true);
@@ -387,7 +390,6 @@ public class TrackManager : MonoBehaviour
         {
             uimanager.instance.inGameWordTxt.transform.parent.gameObject.SetActive(false);
         }*/
-        dayWord = dailyBonus.dailyWords[PlayerPrefs.GetInt("wrd")];
         //LoadLevel(playerScript.currentSpline, false, true);
         // yield return new WaitUntil(() => isGeneratingMap == false);
         progress = 90.0f;
@@ -810,6 +812,7 @@ public class TrackManager : MonoBehaviour
                 strightMapLength = 0;
                 if(currentZone == 0)
                 {
+                    //change to skillz random here
                     float rand = UnityEngine.Random.value;
                     if (rand < 0.25f)
                     {
@@ -1033,11 +1036,11 @@ public class TrackManager : MonoBehaviour
                 posToPlace = currentSpline.GetPoint(progress);
                 Quaternion targetRotation = Quaternion.LookRotation(currentSpline.GetTangent(progress));
                 ObstracleClass obs = obstracleArray[row * colums + col];
-                if(!halfPart && obs._coinType != CoinType.None)
+                if (!halfPart && obs._coinType != CoinType.None)
                 {
-                    SpawnCoinPrefab(obs,posToPlace,targetRotation,xPos);
+                    SpawnCoinPrefab(obs, posToPlace, targetRotation, xPos);
                 }
-                if(obs._obstracleType != ObstracleType.NONE)
+                if (obs._obstracleType != ObstracleType.NONE)
                 {
                     int no = (int)obstracleArray[row * colums + col]._obstracleType;
                     GameObject pref = getSpwanPrefab(no);
@@ -1066,7 +1069,7 @@ public class TrackManager : MonoBehaviour
         {
             if(playerScript.m_TotalWorldDistance > powerupFreequency)
             {
-                GameObject poweUp = GetPoweUp();
+                /*GameObject poweUp = GetPoweUp();
                 if(poweUp != null)
                 {
                     poweUp.transform.position = position;
@@ -1076,7 +1079,7 @@ public class TrackManager : MonoBehaviour
                         powerupFreequency = playerScript.m_TotalWorldDistance + UnityEngine.Random.Range(450, 550);
                     else 
                         powerupFreequency = playerScript.m_TotalWorldDistance + UnityEngine.Random.Range(700, 900);
-                }            
+                } */           
             }           
         }  
         else if (obs._coinType == CoinType.Up)
