@@ -790,10 +790,12 @@ public class TrackManager : MonoBehaviour
     TrackSegment GetTrack()
     {
         TrackSegment nextTrack = null;
-        if (lastRunLength >= currentTheme.zones[currentZone].Length)
+        /*if (lastRunLength >= currentTheme.zones[currentZone].Length)
         {
             lastRunLength = 0;
-            nextTrack = Instantiate(tunnelMap,SpawnedObjects);
+            Debug.Log("create Tunnel Here");
+            //commented by dharma here instantiate tunnel
+            //nextTrack = Instantiate(tunnelMap,SpawnedObjects);
             strightMapLength = 0;
             setNextZone();
             while (NextZone == currentZone)
@@ -801,7 +803,8 @@ public class TrackManager : MonoBehaviour
                 setNextZone();
             }
         }
-        else if(currentZone == 4)
+        else */
+        if(currentZone == 4)
         {
             nextTrack = Instantiate(railRushMaps[UnityEngine.Random.Range(0, railRushMaps.Length)],SpawnedObjects);
         }

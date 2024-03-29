@@ -355,13 +355,13 @@ public class uimanager : MonoBehaviour
       // PGGC_Manager._instance.callAchievement("CgkIjr6Osv0VEAIQCQ");
     }
 
-    public void OnIAPSuccessCalAmt(UnityEngine.Purchasing.IAPButton BtnP)
+    /*public void OnIAPSuccessCalAmt(UnityEngine.Purchasing.IAPButton BtnP)
     {
         float purchasedvalue = regexCurrencyVal(BtnP.priceText.text);
         string currencytype = regexCurrencySymbol(BtnP.priceText.text);
         PlayerPrefs.SetFloat("iappurchasevalue", PlayerPrefs.GetFloat("iappurchasevalue")+ purchasedvalue);
        //FirebaseEvents.instance.LogFirebaseEvent("ProductPurchased", currencytype, purchasedvalue.ToString());
-    }
+    }*/
 
     float regexCurrencyVal(string pricevalue)
     {
@@ -679,7 +679,7 @@ public class uimanager : MonoBehaviour
 
     public void OpenStorePanel(bool t)
     {
-            SfxManager.instance.PlayButtonClick();
+         /*   SfxManager.instance.PlayButtonClick();
             storePnlScrollview.verticalNormalizedPosition = 1.0f;
             storePnl.SetActive(true);
             header.SetActive(true);
@@ -691,7 +691,7 @@ public class uimanager : MonoBehaviour
             {
                 dummyHome.SetActive(false);
             }
-            settingsPnl.SetActive(t);
+            settingsPnl.SetActive(t);*/
          // FirebaseEvents.instance.LogFirebaseEvent("Screen2", "SecondaryScreens", "InStore");
     }
 
@@ -1296,8 +1296,8 @@ public class uimanager : MonoBehaviour
 
     // Native Share --------------------------
     // while publishing the app for ios replace ios app id
-    private string appUrl = "";
-    public void NativeShareLink(bool share)
+    //private string appUrl = "";
+    /*public void NativeShareLink(bool share)
     {
         string subjectString = "All New Exciting Endless Runner Game";
 #if UNITY_ANDROID
@@ -1317,7 +1317,7 @@ public class uimanager : MonoBehaviour
         //      FirebaseEvents.instance.LogFirebaseEvent("RateUS", "Clicked", "");
         //        PlayerPrefs.SetInt("RatingDone", 1);
         //}
-    }
+    }*/
 
     private int ratecounter = 0;
     public void openratepanel()
