@@ -26,6 +26,7 @@ public class PlayerCollisionCntrl : MonoBehaviour
                 coinPrtCle.Play();
                 other.gameObject.SetActive(false);
                 uimanager.instance.UpdateCoin();
+                PowerupHandler.instance.FillSectionBonusBar();
             }else if(s == "powerup")
             {
                 SfxManager.instance.PlayPowerUp();

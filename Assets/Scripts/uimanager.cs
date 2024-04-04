@@ -53,6 +53,8 @@ public class uimanager : MonoBehaviour
     public bool inChase;
     public GameObject plrStarParticle;
 
+  
+
     void Awake()
     {
         if (instance == null)
@@ -1114,7 +1116,7 @@ public class uimanager : MonoBehaviour
         ratecounter += 1;
         openratepanel();
     }
-
+    
     public void UpdateCoin()
     {
         SfxManager.instance.PlayCoinSound();

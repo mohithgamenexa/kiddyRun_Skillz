@@ -23,6 +23,11 @@ MonoBehaviour:
     - {fileID: 3186482968777062050, guid: 6f1ec9d475261ce4cb47652edcba6444, type: 3}
     - {fileID: 4635663051516122869, guid: be17afe316a2a11498cc8a28bbaa9f5b, type: 3}
     - {fileID: 8076701613474871139, guid: 7ad8e9508874f3e469c2157e7b983d1c, type: 3}
+    - {fileID: 2248722627730042217, guid: 60274f2aafe1c03429f5528782c06b7e, type: 3}
+    - {fileID: 998384150017537059, guid: 1df7ed2757b3625439ad6afb3d7df7f8, type: 3}
+    - {fileID: 6353051193243421936, guid: da9546e98fdd8df46ab8182a781cf07f, type: 3}
+    - {fileID: 8692794682121020037, guid: e28c7002d4ce7884aa6c63f1973d7606, type: 3}
+    - {fileID: 3242275332823865168, guid: 3aad6662905ef7445aba7df40a3a7b3a, type: 3}
   - name: beach
     Length: 1000
     isContineous: 0
