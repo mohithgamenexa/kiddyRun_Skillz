@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897733e1788c54560be06338e5600818, type: 3}
   m_Name: skillz-settings-v2
   m_EditorClassIdentifier: 
-  GameID: 0
+  GameID: 23485
   Environment: 0
-  Orientation: 0
+  Orientation: 1
   IsDebugMode: 0
   AllowSkillzExit: 1
   HasSyncBot: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   Score: 
   IsLeavingProgressionRoom: 0
   IsLaunching: 0
-  hasSetSIDEkickDefaults: 0
+  hasSetSIDEkickDefaults: 1
