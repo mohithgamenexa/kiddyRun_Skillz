@@ -868,14 +868,14 @@ public class TrackManager : MonoBehaviour
 
         if (currentZone == 1)
         {
-            lvlNo = UnityEngine.Random.Range(43, 58);
+            lvlNo = SkillzCrossPlatform.Random.Range(43, 58);
         }
         else if(currentZone == 2)
         {
-            lvlNo = UnityEngine.Random.Range(58, 81);
+            lvlNo = SkillzCrossPlatform.Random.Range(58, 81);
         }else if(currentZone == 3)
         {
-            lvlNo = UnityEngine.Random.Range(81, 104);
+            lvlNo = SkillzCrossPlatform.Random.Range(81, 104);
         }else if(currentZone == 0)
         {
             if (laneLength >= 700)
@@ -889,27 +889,27 @@ public class TrackManager : MonoBehaviour
             {
                 if(playerScript.m_TotalWorldDistance < 1000)
                 {
-                    lvlNo = UnityEngine.Random.Range(1, 7);
+                    lvlNo = SkillzCrossPlatform.Random.Range(1, 7);
                 }
                 else
                 {
-                    lvlNo = UnityEngine.Random.Range(1, 31);
+                    lvlNo = SkillzCrossPlatform.Random.Range(1, 31);
                 }
             }
             else
             {
-                lvlNo = UnityEngine.Random.Range(31, 43);
+                lvlNo = SkillzCrossPlatform.Random.Range(31, 43);
             }
             laneLength += 80;
             while (lvlNo == pLvl)
             {
                 if (staticMap)
                 {
-                    lvlNo = UnityEngine.Random.Range(1, 31);
+                    lvlNo = SkillzCrossPlatform.Random.Range(1, 31);
                 }
                 else
                 {
-                    lvlNo = UnityEngine.Random.Range(31, 43);
+                    lvlNo = SkillzCrossPlatform.Random.Range(31, 43);
                 }
             }
         }
