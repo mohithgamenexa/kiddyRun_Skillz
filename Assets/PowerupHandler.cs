@@ -59,6 +59,7 @@ public class PowerupHandler : MonoBehaviour
 
     float fillPercent;
     public Image fillBar;
+    bool activatePowerup;
 
     public void FillSectionBonusBar()
     {
@@ -78,7 +79,7 @@ public class PowerupHandler : MonoBehaviour
             "onupdate", "UpdateFillAmount"
         ));
         fillPercent = collectedCoins / totalCoins;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.15f);
         /*if (fillPercent * 2 > 2.2f)
         {
             fillPercent = 1.1f;
@@ -90,7 +91,7 @@ public class PowerupHandler : MonoBehaviour
             fillBar.fillAmount = 0;
             collectedCoins = 0;
             Debug.Log("----");
-
+            activatePowerup = true;
             SelectDisabledButton();
 
         }
@@ -125,8 +126,9 @@ public class PowerupHandler : MonoBehaviour
         }
 
         // If there are disabled buttons, select one randomly
-        if (disabledButtons.Count > 0)
+        if (disabledButtons.Count > 0 && activatePowerup)
         {
+            activatePowerup = false;
             int randomIndex = Random.Range(0, disabledButtons.Count);
             Button selectedButton = disabledButtons[randomIndex];
 
