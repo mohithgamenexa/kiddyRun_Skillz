@@ -156,13 +156,13 @@ public class TrackManager : MonoBehaviour
             timer += 1;
             if(timer > targetTime)
             {
-                int rNo = UnityEngine.Random.Range(0, 4);
+                int rNo = SkillzCrossPlatform.Random.Range(0, 4);
                 while(rNo == prvNo)
                 {
-                    rNo = UnityEngine.Random.Range(0, 4);
+                    rNo = SkillzCrossPlatform.Random.Range(0, 4);
                 }
                 prvNo = rNo;
-                targetTime = UnityEngine.Random.Range(15, 20);
+                targetTime = SkillzCrossPlatform.Random.Range(15, 20);
                 timer = 0;
                 playerScript.anim.SetInteger("idleno", rNo);   
                 
@@ -680,7 +680,7 @@ public class TrackManager : MonoBehaviour
             map.transform.position = endPoint.position;
             map.transform.rotation = endPoint.rotation;
             playerScript.advanceSpline.transform.parent.gameObject.SetActive(false);
-            TrackSegment map2 = Instantiate(railRushMaps[UnityEngine.Random.Range(1, railRushMaps.Length)],SpawnedObjects);
+            TrackSegment map2 = Instantiate(railRushMaps[SkillzCrossPlatform.Random.Range(1, railRushMaps.Length)],SpawnedObjects);
             playerScript.advanceSpline = map2.mSpline;
             endPoint = playerScript.nextSpline.endPoints[playerScript.nextSpline.endPoints.Count - 1].transform;
             map2.transform.position = endPoint.position;
@@ -806,7 +806,7 @@ public class TrackManager : MonoBehaviour
         else */
         if(currentZone == 4)
         {
-            nextTrack = Instantiate(railRushMaps[UnityEngine.Random.Range(0, railRushMaps.Length)],SpawnedObjects);
+            nextTrack = Instantiate(railRushMaps[SkillzCrossPlatform.Random.Range(0, railRushMaps.Length)],SpawnedObjects);
         }
         else
         {
@@ -987,7 +987,7 @@ public class TrackManager : MonoBehaviour
     {
         GameObject p = null;
         float mul = canGiveWrd == true ? 1.5f : 1f;      
-        float rand = UnityEngine.Random.value;
+        float rand = SkillzCrossPlatform.Random.value;
         rand = rand * mul;
             if (rand <= .15f)
                 p = Instantiate(magnet);
@@ -1155,7 +1155,7 @@ public class TrackManager : MonoBehaviour
         {
             if (coinCount % 15 == 0)
             {
-                if (UnityEngine.Random.Range(0, 10) < 6)
+                if (SkillzCrossPlatform.Random.Range(0, 10) < 6)
                 {
                     targetX += 2.5f;
                 }
@@ -1226,7 +1226,7 @@ public class TrackManager : MonoBehaviour
                 float pX = _x;
                 while (pX == _x)
                 {
-                    int r = UnityEngine.Random.Range(-1, 2);
+                    int r = SkillzCrossPlatform.Random.Range(-1, 2);
                     _x = r * 2.5f;
                 }
                 progress += 0.05f;

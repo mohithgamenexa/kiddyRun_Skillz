@@ -11,7 +11,7 @@ public class footstep : MonoBehaviour
     }
     public void FootSound()
     {
-        AudioClip clip = footClips[Random.Range(0, footClips.Length)];
+        AudioClip clip = footClips[SkillzCrossPlatform.Random.Range(0, footClips.Length)];
         mAudio.clip = clip;
         mAudio.Play();
     }
