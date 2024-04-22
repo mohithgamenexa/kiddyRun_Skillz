@@ -987,7 +987,7 @@ public class TrackManager : MonoBehaviour
     {
         GameObject p = null;
         float mul = canGiveWrd == true ? 1.5f : 1f;      
-        float rand = SkillzCrossPlatform.Random.value;
+        float rand = UnityEngine.Random.value;
         rand = rand * mul;
             if (rand <= .15f)
                 p = Instantiate(magnet);
