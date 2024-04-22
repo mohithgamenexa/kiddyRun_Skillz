@@ -9,17 +9,17 @@ public class ObstraclePiece : MonoBehaviour
     {
         if(cityObj == null && meshes.Length > 0)
         {
-           cityObj = Instantiate(meshes[Random.Range(0, meshes.Length)], transform);
+           cityObj = Instantiate(meshes[SkillzCrossPlatform.Random.Range(0, meshes.Length)], transform);
             cityObj.SetActive(true);
         }
         if (CRObj == null && crMeshes.Length > 0)
         {
-            CRObj = Instantiate(crMeshes[Random.Range(0, crMeshes.Length)], transform);
+            CRObj = Instantiate(crMeshes[SkillzCrossPlatform.Random.Range(0, crMeshes.Length)], transform);
             CRObj.SetActive(false);
         }
         if(beachObj == null && beachMeshes.Length > 0)
         {
-            beachObj = Instantiate(beachMeshes[Random.Range(0, beachMeshes.Length)], transform);
+            beachObj = Instantiate(beachMeshes[SkillzCrossPlatform.Random.Range(0, beachMeshes.Length)], transform);
             beachObj.SetActive(false);
         }
         if (cityObj == null && meshes.Length == 0)
