@@ -53,7 +53,9 @@ public class uimanager : MonoBehaviour
     public bool inChase;
     public GameObject plrStarParticle;
 
-  
+    public Animation intro;
+
+    public int lifes;
 
     void Awake()
     {
@@ -112,10 +114,11 @@ public class uimanager : MonoBehaviour
         m_powerstrength = Shader.PropertyToID("_powerstrength");
         TrackManager._instance.strightPathList[0].MakeMapVisible(false);
         lodingMenu.SetActive(false);
+        IntroPlay(intro);
 
         //camCntrl.tCamera.GetComponent<Animation>().Play();
         mainMenu.SetActive(true);
-        header.SetActive(true);
+        //header.SetActive(true);
 
         if (DataManager.instance.lastPlayedDate != "")
         {
@@ -412,7 +415,7 @@ public class uimanager : MonoBehaviour
     }
     public void Play()
     {
-        MissionManager.instance.SetMissionValues();
+        //MissionManager.instance.SetMissionValues();
         TrackManager._instance.playerScript.Play();
         DataManager.instance.GamesPlayedOL += 1;
         GIftBoxOPen.rewardCount = 0;
@@ -431,6 +434,60 @@ public class uimanager : MonoBehaviour
         TrackManager._instance.playerScript.anim.Play("backrun");
         StartChase();
        // FirebaseEvents.instance.LogFirebaseEvent("Screen3", "ThirdScreen", "Gameover-Gameplay");
+    }
+    public void SubmitButtonClicked()
+    {
+        Debug.Log("Score submitted successfully");
+
+        //loadingPanel.SetActive(true);
+
+        if (scoreSubmitSuccess)
+        {
+            //GameManager.instance.loadingPage.SetActive(true);
+            StartCoroutine(MatchComplete());
+        }
+        else
+        {
+            StartCoroutine(RetrySubmitScoreToSkillz());
+            StartCoroutine(MatchComplete());
+            scoreSubmitSuccess = false;
+        }
+    }
+    bool scoreSubmitSuccess;
+    void TryToSubmitScoreToSkillz()
+    {
+        string score = TrackManager._instance.playerScript.m_Score.ToString();
+        SkillzCrossPlatform.SubmitScore(score, OnSuccess, OnFailure);
+
+        //send event to Tenjin
+        //if (!scoreSubmitSuccess)
+        //    TenjinInit.instance.SendGameOverEvent(score);
+
+        //Send event to firebase
+        /*if (!scoreSubmitSuccess)
+            FirebaseInit.instance.FirebaseGameOverLogEvent(score);*/
+    }
+    void OnSuccess()
+    {
+        //Debug.Log("Success");
+        scoreSubmitSuccess = true;
+    }
+
+    void OnFailure(string reason)
+    {
+        //Debug.LogWarning("Fail: " + reason);
+        StartCoroutine(RetrySubmitScoreToSkillz());
+        SkillzCrossPlatform.DisplayTournamentResultsWithScore(TrackManager._instance.playerScript.m_Score.ToString());
+    }
+    IEnumerator RetrySubmitScoreToSkillz()
+    {
+        yield return new WaitForSeconds(1);
+        TryToSubmitScoreToSkillz();
+    }
+    IEnumerator MatchComplete()
+    {
+        yield return new WaitForSeconds(1);
+        SkillzCrossPlatform.ReturnToSkillz();
     }
     public void StopChase()
     {
@@ -572,14 +629,14 @@ public class uimanager : MonoBehaviour
    
     Coroutine chaseScene;
     public void PreGameOver()
-    {     
+    {
         CountDownFiller.fillAmount = 1;
-        preGameOveMenu.SetActive(true);
+        //preGameOveMenu.SetActive(true);
         pGKeyTxt.text = "" + DataManager.instance.Keys;
         int needKeys = 1; //(int)Mathf.Pow(2, deathCount);
         keysTxtPGo.text = "" + needKeys;
         inChase = false;
-        if(!TrackManager._instance.playerScript.railRun)
+        if (!TrackManager._instance.playerScript.railRun)
             StartCoroutine(EnterDie());
 
         btnContinue.SetActive(false);
@@ -718,7 +775,7 @@ public class uimanager : MonoBehaviour
                 if (magnet != null)
                     StopCoroutine(magnet);
                 magnet = StartCoroutine(PowerupDown(p, powerupNo));
-                MissionManager.instance.MagnetTrigger();
+                //MissionManager.instance.MagnetTrigger();
             }
             else if (powerupNo == 1)
             {
@@ -737,7 +794,7 @@ public class uimanager : MonoBehaviour
                 if (shieldRoutine != null)
                     StopCoroutine(shieldRoutine);
                 shieldRoutine = StartCoroutine(PowerupDown(p, powerupNo));
-                MissionManager.instance.ShieldTrigger();
+                //MissionManager.instance.ShieldTrigger();
             }
             else if (powerupNo == 4)
             {
@@ -760,21 +817,21 @@ public class uimanager : MonoBehaviour
             // collectedBoxes += 1;
             DataManager.instance.GiftBoxCount += 1;
             GIftBoxOPen.rewardCount += 1;
-            MissionManager.instance.MysteryBoxTrigger();
+            //MissionManager.instance.MysteryBoxTrigger();
         }
         else if (powerupNo == 7)
         {
             hedrKeyTxt.text = "" + DataManager.instance.AddKey(1);
             uimanager.instance.hedrkeyobj.Play();
 
-            MissionManager.instance.KeyTrigger();
+            //MissionManager.instance.KeyTrigger();
         }
         else if(powerupNo == 8)
         {
             powerupArray[4].PlrRepObj.SetActive(false);
             powerupArray[5].PlrRepObj.SetActive(false);
             TrackManager._instance.playerScript.DoFly();
-            MissionManager.instance.JetPackTrigger();
+            //MissionManager.instance.JetPackTrigger();
             StopChase();
         }
         else if (powerupNo == 9)
@@ -885,7 +942,7 @@ public class uimanager : MonoBehaviour
     {
         if(TrackManager._instance._gameState == GameState.PREGAMEOVER||pause)
         {
-            if( coinsCltd >0){
+            /*if( coinsCltd >0){
                 //if (AdsManager_Mediation.Instance._videoAvailable())
                 //{
                 //    doubleItBtn.SetActive(true);
@@ -894,43 +951,44 @@ public class uimanager : MonoBehaviour
             else
             {
                 doubleItBtn.SetActive(false);
-            }
+            }*/
             SfxManager.instance.PlayGameOver();
-            MissionManager.instance.GameOver(coinsCltd, (int)TrackManager._instance.playerScript.m_TotalWorldDistance,TrackManager._instance.playerScript.m_Score);
-            if(coinsCltd == 2019)
+            //MissionManager.instance.GameOver(coinsCltd, (int)TrackManager._instance.playerScript.m_TotalWorldDistance,TrackManager._instance.playerScript.m_Score);
+            /*if(coinsCltd == 2019)
             {
               // PGGC_Manager._instance.callAchievement("CgkIjr6Osv0VEAIQCg"); 
-            }
+            }*/
             UpdateTextValues();
             if (lastRoutine != null)
             {
                 StopCoroutine(lastRoutine);
             }
             StopChase();
-            header.SetActive(true);
+            //header.SetActive(true);
             preGameOveMenu.SetActive(false);
             inGameMenu.SetActive(false);
-            if (GIftBoxOPen.rewardCount <= 0)
+            Debug.Log("Gameover");
+            gameoverMenu.SetActive(true);
+            /*if (GIftBoxOPen.rewardCount <= 0)
             {
-                gameoverMenu.SetActive(true);
             }
             else
             {
                 giftboxMenu.SetActive(true);
-            }
+            }*/
 
             gameOverMesh.transform.parent.gameObject.SetActive(true);
             //sMulTxtGameOver.text = "X" + TrackManager._instance.playerScript.scoreMul;
-            if(TrackManager._instance.playerScript.m_Score > DataManager.instance.HighScore)
+            /*if(TrackManager._instance.playerScript.m_Score > DataManager.instance.HighScore)
             {
-                DataManager.instance.HighScore = TrackManager._instance.playerScript.m_Score;
+                //DataManager.instance.HighScore = TrackManager._instance.playerScript.m_Score;
                 HighScoreMenu.SetActive(true);
               // PGGC_Manager._instance.OnAddScoretoLeaderBoard(DataManager.instance.HighScore);
             }
             else
             {
                 HighScoreMenu.SetActive(false);
-            }
+            }*/
             TrackManager._instance._gameState = GameState.GAMEOVER;
            //FirebaseEvents.instance.LogFirebaseEvent("Screen5", "FifthScreen", "Revive-gameover");
                 #if UNITY_ANDROID
@@ -987,6 +1045,32 @@ public class uimanager : MonoBehaviour
         coinOnGameOver.text = "" + coinsCltd;
         deathCount = 0;
     }
+
+    public void GiveLife()
+    {
+        SfxManager.instance.PlayButtonClick();
+        gameoverMenu.SetActive(false);
+        header.SetActive(false);
+        int needKeys = 1;//(int)Mathf.Pow(2, deathCount);
+        if (lifes >= needKeys)
+        {
+            lifes--;
+            if (lastRoutine != null)
+                StopCoroutine(lastRoutine);
+            TrackManager._instance._SaveMe();
+
+            //preGameOveMenu.SetActive(false);
+            /*if (!videoCmpltd)
+                DataManager.instance.AddKey(-needKeys);*/
+            //hedrKeyTxt.text = "" + DataManager.instance.Keys;
+            uimanager.instance.hedrkeyobj.Play();
+
+            //deathCount += 1;
+            PowerupOnOff(powerupArray[3], 3, false);
+            StopChase();
+        }
+    }
+
     public void SaveMe(bool videoCmpltd = false)
     {
         if(TrackManager._instance._gameState == GameState.PREGAMEOVER)
@@ -995,19 +1079,20 @@ public class uimanager : MonoBehaviour
             gameoverMenu.SetActive(false);
             header.SetActive(false);
             int needKeys = 1;//(int)Mathf.Pow(2, deathCount);
-            if (DataManager.instance.Keys >= needKeys || videoCmpltd)
+            if (lifes >= needKeys || videoCmpltd)
             {
+                lifes--;
                 if (lastRoutine != null)
                     StopCoroutine(lastRoutine);
                 TrackManager._instance._SaveMe();
 
-                preGameOveMenu.SetActive(false);
-                if (!videoCmpltd)
-                    DataManager.instance.AddKey(-needKeys);
-                hedrKeyTxt.text = "" + DataManager.instance.Keys;
+                //preGameOveMenu.SetActive(false);
+                /*if (!videoCmpltd)
+                    DataManager.instance.AddKey(-needKeys);*/
+                //hedrKeyTxt.text = "" + DataManager.instance.Keys;
                 uimanager.instance.hedrkeyobj.Play();
 
-                deathCount += 1;
+                //deathCount += 1;
                 PowerupOnOff(powerupArray[3], 3, false);
                 StopChase();
             }
@@ -1032,7 +1117,7 @@ public class uimanager : MonoBehaviour
         if (pause && TrackManager._instance._gameState != GameState.PLAYING)
             return;
         SfxManager.instance.PlayButtonClick();       
-        header.SetActive(pause);
+        //header.SetActive(pause);
         enemyAnim.enabled = pause;
         pauseMenu.SetActive(pause);
         if (pause)
@@ -1126,7 +1211,7 @@ public class uimanager : MonoBehaviour
             coinsCltd += 1;
         }
         inGameCoinTxt.text = "" + coinsCltd;
-        MissionManager.instance.CoinTrigger();
+        //MissionManager.instance.CoinTrigger();
     }
     public void ShowNotEnoughCoin(bool coin = true)
     {
@@ -1148,7 +1233,7 @@ public class uimanager : MonoBehaviour
     {
         if (TrackManager._instance._gameState == GameState.PLAYING)
         {
-            MissionManager.instance.GameOver(coinsCltd, (int)TrackManager._instance.playerScript.m_TotalWorldDistance,TrackManager._instance.playerScript.m_Score);
+            //MissionManager.instance.GameOver(coinsCltd, (int)TrackManager._instance.playerScript.m_TotalWorldDistance,TrackManager._instance.playerScript.m_Score);
         }
         TimeSpan ts = DateTime.Now.Subtract(GameOpenTime);
        //FirebaseEvents.instance.LogMulFirebaseEvent("OnQuitEvent", new Firebase.Analytics.Parameter[] {
@@ -1164,7 +1249,8 @@ public class uimanager : MonoBehaviour
 
         ///
         //local notifications
-        }
+    }
+
     public void VaultNotification()
     {
         if (DataManager.instance.GiftBoxCount > 0)
@@ -1274,6 +1360,9 @@ public class uimanager : MonoBehaviour
         enemyAnim.SetBool("catch", true);
         EnemyTransform.LookAt(player_);
         EnemyTransform.eulerAngles = new Vector3(0, EnemyTransform.eulerAngles.y, 0);
+        Invoke(nameof(CheckAd), 1f);
+        //CheckAd();
+
     }
 
     Vector3 getEmptyPos(Transform player_)

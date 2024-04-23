@@ -31,7 +31,7 @@ public class PlayerCollisionCntrl : MonoBehaviour
             {
                 SfxManager.instance.PlayPowerUp();
                 uimanager.instance.PowerUpCollected((int)other.GetComponent<powerupCntrl>().powerUpType);
-                MissionManager.instance.PowerUpTrigger();
+                //MissionManager.instance.PowerUpTrigger();
                 PowCol.Play();
                 Destroy(other.gameObject);
             }
@@ -43,7 +43,11 @@ public class PlayerCollisionCntrl : MonoBehaviour
             }
             else if (s == "die" || s == "die2")
             {
-                if (uimanager.instance.powerupArray[3].isActivated || playerScript.mFlying)
+                if(uimanager.instance.lifes > 0 )
+                {
+                    uimanager.instance.GiveLife();
+                }
+                else if (uimanager.instance.powerupArray[3].isActivated || playerScript.mFlying)
                 {
                     return;
                    // TrackManager._instance._gameState = GameState.SAVEME;

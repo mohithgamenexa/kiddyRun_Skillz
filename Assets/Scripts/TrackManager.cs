@@ -232,7 +232,7 @@ public class TrackManager : MonoBehaviour
         {
             dailyBonus.WordCompleted();
             canGiveWrd = false;
-            MissionManager.instance.WordHuntTrigger();
+            //MissionManager.instance.WordHuntTrigger();
         }
     }
 

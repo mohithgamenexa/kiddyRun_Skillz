@@ -340,7 +340,7 @@ namespace BezierSolution
                 anim.SetBool("jump", true);
                 m_Jumping = true;
                 camHeightDamping = 0.0f;
-                MissionManager.instance.JumpTrigger();
+                //MissionManager.instance.JumpTrigger();
                 uimanager.instance.enemyAnim.SetTrigger("jump");
             }
         }
@@ -364,7 +364,7 @@ namespace BezierSolution
                 mCollieder.center = new Vector3(0, 0.3f, 0);
                 m_Sliding = true;
                 anim.SetBool("slide", true);
-                MissionManager.instance.RollTrigger();
+                //MissionManager.instance.RollTrigger();
                 if (cachedTransform.position.y < 1&&TrackManager._instance.currentZone!=4)
                     slideParticle.SetActive(true);
             }

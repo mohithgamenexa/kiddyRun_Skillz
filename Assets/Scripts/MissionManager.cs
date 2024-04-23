@@ -129,7 +129,7 @@ public class MissionManager : MonoBehaviour
             }
         }
         DeletePrefValues();
-        SetMissionValues();
+        //SetMissionValues();
         OnMissionPnlAppear();
         OnPausePnlAppear();
     }
