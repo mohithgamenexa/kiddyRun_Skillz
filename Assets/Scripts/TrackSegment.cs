@@ -30,10 +30,10 @@ public class TrackSegment : MonoBehaviour
                  }
                  else
                  {
-                    int mapNo = Random.Range(0, envAssets.Length);
+                    int mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
                         while(mapNo == prvNo)
                         {
-                            mapNo = Random.Range(0, envAssets.Length);
+                            mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
                         }
                         prvNo = mapNo;
                     map = Instantiate(envAssets[mapNo]).transform;

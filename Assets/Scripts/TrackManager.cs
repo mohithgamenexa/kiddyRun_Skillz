@@ -94,6 +94,8 @@ public class TrackManager : MonoBehaviour
     public Image dipFade;
     public int NextZone;
     Transform SpawnedObjects;
+
+    public TMP_Text levelNo;
     public GameState _gameState
     {
         get
@@ -817,6 +819,8 @@ public class TrackManager : MonoBehaviour
                 {
                     //change to skillz random here
                     float rand = SkillzCrossPlatform.Random.Range(0,1);
+
+                    Debug.Log("mapturnRand::" + rand);
                     if (rand < 0.25f)
                     {
                         nextTrack = Instantiate(mapJunction, SpawnedObjects);
@@ -878,7 +882,9 @@ public class TrackManager : MonoBehaviour
             lvlNo = SkillzCrossPlatform.Random.Range(81, 104);
         }else if(currentZone == 0)
         {
-            if (laneLength >= 700)
+            lvlNo = SkillzCrossPlatform.Random.Range(1, 43);
+
+            /*if (laneLength >= 700)
             {
                 staticMap = !staticMap;
                 if (!staticMap)
@@ -911,8 +917,10 @@ public class TrackManager : MonoBehaviour
                 {
                     lvlNo = SkillzCrossPlatform.Random.Range(31, 43);
                 }
-            }
+            }*/
         }
+        Debug.Log("NextLevelNo::" + lvlNo);
+        levelNo.text = lvlNo.ToString();
         pLvl = lvlNo;
         return lvlNo;
     }
