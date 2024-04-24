@@ -333,7 +333,7 @@ namespace BezierSolution
                 SfxManager.instance.PlayJump();
                 if (m_Sliding)
                     StopSliding();
-                anim.SetInteger("jumpno", SkillzCrossPlatform.Random.Range(0, 3));
+                anim.SetInteger("jumpno", Random.Range(0, 3));
                 m_JumpStart = m_TotalWorldDistance;
                 _Y = cachedTransform.position.y;
                 //  mBody.useGravity = false;

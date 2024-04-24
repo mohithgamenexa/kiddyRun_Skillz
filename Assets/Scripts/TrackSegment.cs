@@ -30,10 +30,10 @@ public class TrackSegment : MonoBehaviour
                  }
                  else
                  {
-                    int mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
+                    int mapNo = Random.Range(0, envAssets.Length);
                         while(mapNo == prvNo)
                         {
-                            mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
+                            mapNo = Random.Range(0, envAssets.Length);
                         }
                         prvNo = mapNo;
                     map = Instantiate(envAssets[mapNo]).transform;
@@ -88,7 +88,7 @@ public class TrackSegment : MonoBehaviour
         GameObject[] curvedAssets = getEnvAssets(dir);
         for (int i = 0; i < 4; i++)
         {
-            Transform map = Instantiate(curvedAssets[SkillzCrossPlatform.Random.Range(0, curvedAssets.Length)]).transform;
+            Transform map = Instantiate(curvedAssets[Random.Range(0, curvedAssets.Length)]).transform;
             map.transform.SetParent(this.transform);
            // map.transform.localScale = new Vector3(-dir, 1f, 1f);
             Vector3 pos = Vector3.zero;

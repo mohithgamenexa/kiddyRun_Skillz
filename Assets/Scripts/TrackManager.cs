@@ -156,13 +156,13 @@ public class TrackManager : MonoBehaviour
             timer += 1;
             if(timer > targetTime)
             {
-                int rNo = SkillzCrossPlatform.Random.Range(0, 4);
+                int rNo = UnityEngine.Random.Range(0, 4);
                 while(rNo == prvNo)
                 {
-                    rNo = SkillzCrossPlatform.Random.Range(0, 4);
+                    rNo = UnityEngine.Random.Range(0, 4);
                 }
                 prvNo = rNo;
-                targetTime = SkillzCrossPlatform.Random.Range(15, 20);
+                targetTime = UnityEngine.Random.Range(15, 20);
                 timer = 0;
                 playerScript.anim.SetInteger("idleno", rNo);   
                 
@@ -680,7 +680,7 @@ public class TrackManager : MonoBehaviour
             map.transform.position = endPoint.position;
             map.transform.rotation = endPoint.rotation;
             playerScript.advanceSpline.transform.parent.gameObject.SetActive(false);
-            TrackSegment map2 = Instantiate(railRushMaps[SkillzCrossPlatform.Random.Range(1, railRushMaps.Length)],SpawnedObjects);
+            TrackSegment map2 = Instantiate(railRushMaps[UnityEngine.Random.Range(1, railRushMaps.Length)],SpawnedObjects);
             playerScript.advanceSpline = map2.mSpline;
             endPoint = playerScript.nextSpline.endPoints[playerScript.nextSpline.endPoints.Count - 1].transform;
             map2.transform.position = endPoint.position;
@@ -806,7 +806,7 @@ public class TrackManager : MonoBehaviour
         else */
         if(currentZone == 4)
         {
-            nextTrack = Instantiate(railRushMaps[SkillzCrossPlatform.Random.Range(0, railRushMaps.Length)],SpawnedObjects);
+            nextTrack = Instantiate(railRushMaps[UnityEngine.Random.Range(0, railRushMaps.Length)],SpawnedObjects);
         }
         else
         {
@@ -1226,7 +1226,7 @@ public class TrackManager : MonoBehaviour
                 float pX = _x;
                 while (pX == _x)
                 {
-                    int r = SkillzCrossPlatform.Random.Range(-1, 2);
+                    int r = UnityEngine.Random.Range(-1, 2);
                     _x = r * 2.5f;
                 }
                 progress += 0.05f;
