@@ -818,7 +818,8 @@ public class TrackManager : MonoBehaviour
                 if(currentZone == 0)
                 {
                     //change to skillz random here
-                    float rand = SkillzCrossPlatform.Random.Range(0,1);
+                    //float rand = SkillzCrossPlatform.Random.Range(0,1);
+                    float rand = 0.2f;
 
                     Debug.Log("mapturnRand::" + rand);
                     if (rand < 0.25f)
@@ -1163,7 +1164,7 @@ public class TrackManager : MonoBehaviour
         {
             if (coinCount % 15 == 0)
             {
-                if (SkillzCrossPlatform.Random.Range(0, 10) < 6)
+                if (UnityEngine.Random.Range(0, 10) < 6)
                 {
                     targetX += 2.5f;
                 }
