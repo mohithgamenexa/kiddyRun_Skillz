@@ -56,6 +56,7 @@ public class uimanager : MonoBehaviour
     public Animation intro;
 
     public int lifes;
+    public List<GameObject> lifeSprites;
 
     void Awake()
     {
@@ -967,6 +968,7 @@ public class uimanager : MonoBehaviour
             //header.SetActive(true);
             preGameOveMenu.SetActive(false);
             inGameMenu.SetActive(false);
+            lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
             Debug.Log("Gameover");
             gameoverMenu.SetActive(true);
             /*if (GIftBoxOPen.rewardCount <= 0)
@@ -1054,7 +1056,10 @@ public class uimanager : MonoBehaviour
         int needKeys = 1;//(int)Mathf.Pow(2, deathCount);
         if (lifes >= needKeys)
         {
+            lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
             lifes--;
+
+
             if (lastRoutine != null)
                 StopCoroutine(lastRoutine);
             TrackManager._instance._SaveMe();
