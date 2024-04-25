@@ -14,7 +14,7 @@ public class CrossRoadVan : MonoBehaviour
         mTransform = transform;
         mTransform.GetChild(0).gameObject.SetActive(true);
         tgtPos = Vector3.zero;
-        int t = SkillzCrossPlatform.Random.Range(-1, 2);
+        int t = Random.Range(-1, 2);
         if(t == -1)
         {
             tgtPos.x = -3.5f;

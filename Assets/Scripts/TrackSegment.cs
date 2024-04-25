@@ -32,7 +32,7 @@ public class TrackSegment : MonoBehaviour
                  else
                  {
                         Debug.Log("notCont..");
-                        int mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
+                        int mapNo = Random.Range(0, envAssets.Length);
                         /*while(mapNo == prvNo)
                         {
                             mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
