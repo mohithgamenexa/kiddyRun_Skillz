@@ -34,7 +34,7 @@ public class PowerupHandler : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            int randomIndex = SkillzCrossPlatform.Random.Range(0, allPowerups.Count);
+            int randomIndex = Random.Range(0, allPowerups.Count);
             GameObject selectedObject = allPowerups[randomIndex];
 
             // Check if the object is already selected to avoid duplicates
@@ -129,7 +129,7 @@ public class PowerupHandler : MonoBehaviour
         if (disabledButtons.Count > 0 && activatePowerup)
         {
             activatePowerup = false;
-            int randomIndex = SkillzCrossPlatform.Random.Range(0, disabledButtons.Count);
+            int randomIndex = Random.Range(0, disabledButtons.Count);
             Button selectedButton = disabledButtons[randomIndex];
 
             // Do something with the selected disabled button
