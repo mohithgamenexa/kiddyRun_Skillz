@@ -14,7 +14,7 @@ public class VehFrwdMove : MonoBehaviour
         player_ = GameObject.FindWithTag("Player").transform;
         if (meshes.Length > 0)
         {
-            GameObject mesh = Instantiate(meshes[SkillzCrossPlatform.Random.Range(0, meshes.Length)], mTransform);
+            GameObject mesh = Instantiate(meshes[Random.Range(0, meshes.Length)], mTransform);
             mesh.transform.localEulerAngles = new Vector3(0, 180, 0);
             mesh.transform.localPosition = Vector3.forward * 7.5f;
         }

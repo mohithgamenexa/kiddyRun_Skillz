@@ -26,17 +26,19 @@ public class TrackSegment : MonoBehaviour
                   Transform map = null;
                  if (mSpline.pathType == PATHTYPE.JUNCTION && i == 2)
                  {
+                        Debug.Log("Cont..");
                         continue;
                  }
                  else
                  {
-                    int mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
-                        while(mapNo == prvNo)
+                        Debug.Log("notCont..");
+                        int mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
+                        /*while(mapNo == prvNo)
                         {
                             mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
-                        }
+                        }*/
                         prvNo = mapNo;
-                    map = Instantiate(envAssets[mapNo]).transform;
+                        map = Instantiate(envAssets[mapNo]).transform;
                  }
                     map.transform.SetParent(this.transform);
                     if (forword == 1)
