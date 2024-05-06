@@ -123,9 +123,9 @@ namespace BezierSolution
             m_Speed = 15;
             anim.enabled = true;
             TrackManager._instance._gameState = GameState.PLAYING;
-            scoreMul = MissionManager.instance.CurrentSet + 1;
-            scoreMul += DataManager.instance.ScoreMul;
-            DataManager.instance.ScoreMul = 0;
+            //scoreMul = MissionManager.instance.CurrentSet + 1;
+            scoreMul += 1;
+            //DataManager.instance.ScoreMul = 0;
             uimanager.instance.scoreMul.text = scoreMul + "X";
             glider.SetActive(false);
             flyingPrtcl.SetActive(false);

@@ -69,7 +69,7 @@ public class GIftBoxOPen : MonoBehaviour
             else if (shuffleNo == 4)
             {
                 vaultitemlabel.text = "Got +5Multiplier";
-                DataManager.instance.ScoreMul = 5;
+                //DataManager.instance.ScoreMul = 5;
             }
             rewardCount -= 1;
         }

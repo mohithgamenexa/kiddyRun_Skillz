@@ -102,7 +102,7 @@ public class ShopManager : MonoBehaviour
         {
             uimanager.instance.PlayCoinParticle();
             DataManager.instance.AddCoin(-cost);
-            DataManager.instance.ScoreMul = 5;
+            //DataManager.instance.ScoreMul = 5;
             uimanager.instance.UpdateHeader();
             purchasedBtn.SetActive(true);
           // FirebaseEvents.instance.LogFirebaseEvent("+5Multiplier", "Purchased", "Sucess");

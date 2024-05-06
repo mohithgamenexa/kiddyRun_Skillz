@@ -99,7 +99,7 @@ public class MissionManager : MonoBehaviour
         {
             missionCmpltdLbl.SetActive(true);
         }
-        uimanager.instance.SetScoreMul(CurrentSet + 1);
+        //uimanager.instance.SetScoreMul(CurrentSet + 1);
         Invoke("ChangeMissionSet", 1f);
 
 //       FirebaseEvents.instance.SetUserProperty("PROGRESS", "" + (CurrentSet / 60) * 100);

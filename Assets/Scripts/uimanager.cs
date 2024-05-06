@@ -29,7 +29,7 @@ public class uimanager : MonoBehaviour
     public Animation hedrCoinobj, hedrkeyobj;
     [Header("Text Sources")]
     public TextMeshProUGUI inGameCoinTxt;
-    public TextMeshProUGUI hedrKeyTxt, scoreOnGameOver, coinOnGameOver, keysTxtPGo, hedrCoinTxt, infoTxt, flyTxt;
+    public TextMeshProUGUI hedrKeyTxt, scoreOnGameOver,lifesOnGameOver, totalscoreOnGameOver,coinOnGameOver,lifesRemainingOnGameOver, keysTxtPGo, hedrCoinTxt, infoTxt, flyTxt;
     
     public TextMeshProUGUI sMulTxtMission, scoreMul, sMulTxtGameOver;
     public TextMeshProUGUI pGKeyTxt;
@@ -1042,9 +1042,14 @@ public class uimanager : MonoBehaviour
     void UpdateTextValues()
     {
         scoreOnGameOver.text = "" + TrackManager._instance.playerScript.m_Score;
-        hedrCoinTxt.text = "" + DataManager.instance.AddCoin(coinsCltd);
-        hedrKeyTxt.text = "" + DataManager.instance.Keys;
+        //hedrCoinTxt.text = "" + DataManager.instance.AddCoin(coinsCltd);
+        //hedrKeyTxt.text = "" + DataManager.instance.Keys;
         coinOnGameOver.text = "" + coinsCltd;
+        lifesRemainingOnGameOver.text = "X" + lifes.ToString();
+        lifesOnGameOver.text = "" + lifes;
+        int total = TrackManager._instance.playerScript.m_Score + coinsCltd + (lifes*100);
+        totalscoreOnGameOver.text = total.ToString();
+
         deathCount = 0;
     }
 
@@ -1128,7 +1133,7 @@ public class uimanager : MonoBehaviour
         if (pause)
         {
             TrackManager._instance._gameState = GameState.PAUSE;          
-            MissionManager.instance.OnPausePnlAppear();
+            //MissionManager.instance.OnPausePnlAppear();
         }
         else
         {

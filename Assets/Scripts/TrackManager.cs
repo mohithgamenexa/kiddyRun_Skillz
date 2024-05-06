@@ -96,6 +96,8 @@ public class TrackManager : MonoBehaviour
     Transform SpawnedObjects;
 
     public TMP_Text levelNo;
+
+    public List<int> powerupCount;
     public GameState _gameState
     {
         get
@@ -344,6 +346,7 @@ public class TrackManager : MonoBehaviour
     }
     void Start()
     {
+        Shuffle(powerupCount);
         tutorialPld = DataManager.instance.tutorialPlyd == 1 ? true : false;
         currentTheme = Resources.Load("Data/" + themeType.ToString()) as Theme;
         LoadAsssets();
@@ -1432,6 +1435,19 @@ public class TrackManager : MonoBehaviour
         CameraController.XOffSet = 0.3f;
         _cam.localRotation = Quaternion.identity;
         _cam.localPosition = Vector3.zero;
+    }
+    public static void Shuffle<T>(List<T> list)
+    {
+        System.Random rng = new System.Random();
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
     }
 }
 public enum ObstracleType

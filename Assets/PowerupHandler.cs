@@ -129,7 +129,7 @@ public class PowerupHandler : MonoBehaviour
         if (disabledButtons.Count > 0 && activatePowerup)
         {
             activatePowerup = false;
-            int randomIndex = Random.Range(0, disabledButtons.Count);
+            int randomIndex = SkillzCrossPlatform.Random.Range(0, disabledButtons.Count);
             Button selectedButton = disabledButtons[randomIndex];
 
             // Do something with the selected disabled button
