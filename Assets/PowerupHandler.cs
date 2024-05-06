@@ -34,7 +34,7 @@ public class PowerupHandler : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            int randomIndex = Random.Range(0, allPowerups.Count);
+            int randomIndex = SkillzCrossPlatform.Random.Range(0, allPowerups.Count);
             GameObject selectedObject = allPowerups[randomIndex];
 
             // Check if the object is already selected to avoid duplicates
