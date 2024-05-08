@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Linq;
 public class PowerupHandler : MonoBehaviour
 {
     public static PowerupHandler instance;
@@ -112,36 +112,49 @@ public class PowerupHandler : MonoBehaviour
           collectedCoins += amount;
           UpdateProgressBar();
       }*/
+
+    int c = 0;
     void SelectDisabledButton()
     {
-        List<Button> disabledButtons = new List<Button>();
+        /* List<Button> disabledButtons = new List<Button>();
 
-        // Iterate through the buttons to find disabled ones
-        foreach (Button button in powerupButtons)
+         // Iterate through the buttons to find disabled ones
+         foreach (Button button in powerupButtons)
+         {
+             if (!button.interactable)
+             {
+                 disabledButtons.Add(button);
+             }
+         }
+
+         // If there are disabled buttons, select one randomly
+         if (disabledButtons.Count > 0 && activatePowerup)
+         {
+             activatePowerup = false;
+             int randomIndex = SkillzCrossPlatform.Random.Range(0, disabledButtons.Count);
+             Button selectedButton = disabledButtons[randomIndex];
+
+             // Do something with the selected disabled button
+             selectedButton.interactable = true;
+             Debug.Log("Selected disabled button: " + selectedButton.name);
+         }
+         else
+         {
+             // If all buttons are enabled
+             Debug.Log("All buttons are enabled");
+         }*/
+        Button inactiveButton = powerupButtons.FirstOrDefault(button => !button.gameObject.GetComponent<Button>().interactable);
+
+        // If an inactive button is found, enable its Button component
+        if (inactiveButton != null)
         {
-            if (!button.interactable)
-            {
-                disabledButtons.Add(button);
-            }
-        }
-
-        // If there are disabled buttons, select one randomly
-        if (disabledButtons.Count > 0 && activatePowerup)
-        {
-            activatePowerup = false;
-            int randomIndex = SkillzCrossPlatform.Random.Range(0, disabledButtons.Count);
-            Button selectedButton = disabledButtons[randomIndex];
-
-            // Do something with the selected disabled button
-            selectedButton.interactable = true;
-            Debug.Log("Selected disabled button: " + selectedButton.name);
+            inactiveButton.interactable = true;
         }
         else
         {
-            // If all buttons are enabled
-            Debug.Log("All buttons are enabled");
+            Debug.Log("No inactive buttons found.");
         }
-        
+
     }
     public void UsePowerup(int count)
     {

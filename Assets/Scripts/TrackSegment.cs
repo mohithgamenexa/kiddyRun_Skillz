@@ -10,6 +10,7 @@ public class TrackSegment : MonoBehaviour
     public bool isYjun;
     [HideInInspector]
     public bool isFirstMap;
+    int c = 0;
     public void Start()
     {
         int prvNo = -1;
@@ -32,13 +33,16 @@ public class TrackSegment : MonoBehaviour
                  else
                  {
                         Debug.Log("notCont..");
-                        int mapNo = Random.Range(0, envAssets.Length);
+                        //int mapNo = Random.Range(0, envAssets.Length);
                         /*while(mapNo == prvNo)
                         {
                             mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
                         }*/
-                        prvNo = mapNo;
-                        map = Instantiate(envAssets[mapNo]).transform;
+                        prvNo = c;
+                        map = Instantiate(envAssets[c]).transform;
+                        c++;
+                        if (c > envAssets.Length)
+                            c = 0;
                  }
                     map.transform.SetParent(this.transform);
                     if (forword == 1)

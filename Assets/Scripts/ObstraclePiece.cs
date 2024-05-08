@@ -5,11 +5,17 @@ public class ObstraclePiece : MonoBehaviour
 {   
     public GameObject[] meshes,crMeshes,beachMeshes;
     public GameObject cityObj, CRObj,beachObj,forestObj;
+    int c = 0;
     void Awake()
     {
         if(cityObj == null && meshes.Length > 0)
         {
-           cityObj = Instantiate(meshes[Random.Range(0, meshes.Length)], transform);
+
+            //cityObj = Instantiate(meshes[Random.Range(0, meshes.Length)], transform);
+            cityObj = Instantiate(meshes[c], transform);
+            c++;
+            if (c > meshes.Length)
+                c = 0;
             cityObj.SetActive(true);
         }
         if (CRObj == null && crMeshes.Length > 0)
