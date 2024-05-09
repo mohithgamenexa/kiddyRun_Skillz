@@ -821,15 +821,15 @@ public class TrackManager : MonoBehaviour
                 if(currentZone == 0)
                 {
                     //change to skillz random here
-                    //float rand = SkillzCrossPlatform.Random.Range(0,1);
-                    float rand = 0.4f;
+                    float rand = SkillzCrossPlatform.Random.Range(0f,1f);
+                    //float rand = 0.4f;
 
                     Debug.Log("mapturnRand::" + rand);
-                    /*if (rand < 0.25f)
+                    if (rand < 0.25f)
                     {
                         nextTrack = Instantiate(mapJunction, SpawnedObjects);
                     }
-                    else*/ if (rand <= 0.5f)
+                    else if (rand <= 0.5f)
                     {
                         nextTrack = Instantiate(mapMetro, SpawnedObjects);
                     }
