@@ -457,8 +457,8 @@ public class uimanager : MonoBehaviour
     bool scoreSubmitSuccess;
     void TryToSubmitScoreToSkillz()
     {
-        string score = TrackManager._instance.playerScript.m_Score.ToString();
-        SkillzCrossPlatform.SubmitScore(score, OnSuccess, OnFailure);
+        string score = totalScore.ToString();
+        SkillzCrossPlatform.SubmitScore(totalScore, OnSuccess, OnFailure);
 
         //send event to Tenjin
         //if (!scoreSubmitSuccess)
@@ -1038,7 +1038,7 @@ public class uimanager : MonoBehaviour
         //coinOnGameOver.text = "" + coinsCltd;
         StartCoroutine(doubleItTextUpdate(fromvalue,tovalue,coinOnGameOver));
     }
-
+    int totalScore;
     void UpdateTextValues()
     {
         scoreOnGameOver.text = "" + TrackManager._instance.playerScript.m_Score;
@@ -1048,6 +1048,7 @@ public class uimanager : MonoBehaviour
         lifesRemainingOnGameOver.text = "X" + lifes.ToString();
         lifesOnGameOver.text = "" + lifes;
         int total = TrackManager._instance.playerScript.m_Score + coinsCltd + (lifes*100);
+        totalScore = total;
         totalscoreOnGameOver.text = total.ToString();
 
         deathCount = 0;

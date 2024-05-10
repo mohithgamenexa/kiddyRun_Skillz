@@ -351,7 +351,7 @@ public class TrackManager : MonoBehaviour
         currentTheme = Resources.Load("Data/" + themeType.ToString()) as Theme;
         LoadAsssets();
         AssaignSplineInStart();
-        uimanager.instance.inGameWordTxt.text = dailyBonus.dailyWords[PlayerPrefs.GetInt("wrd")];
+        //uimanager.instance.inGameWordTxt.text = dailyBonus.dailyWords[PlayerPrefs.GetInt("wrd")];
     }
     public float progress = 0;
     IEnumerator WaitAndLoadAllObs()
@@ -401,6 +401,9 @@ public class TrackManager : MonoBehaviour
         if (tutorialPld)
         {
             LoadLevel(playerScript.nextSpline, false);
+            Timer.instance.totalTime = 185;
+            Timer.instance.startTimer = true;
+
         }
         else
         {

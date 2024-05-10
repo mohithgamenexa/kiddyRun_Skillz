@@ -163,6 +163,7 @@ namespace BezierSolution
             canSwipe = true;
             tutorialPld = true;
             tutorialPnl.gameObject.SetActive(true);
+
         }
         void onSwipeTut()
         {
@@ -177,6 +178,8 @@ namespace BezierSolution
             {
                 DataManager.instance.tutorialPlyd = 1;
                 TrackManager._instance.tutorialPld = true;
+                Timer.instance.startTimer = true;
+
             }
             tutorialPnl.gameObject.SetActive(false);
         }
