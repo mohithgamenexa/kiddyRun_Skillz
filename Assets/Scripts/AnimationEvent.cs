@@ -29,6 +29,7 @@ public class AnimationEvent : MonoBehaviour
         gameObject.SetActive(false);
         MusicPlayer.instance.Pause(false);
         TrackManager._instance._gameState = GameState.PLAYING;
+        Timer.instance.startTimer = true;
         uimanager.instance.enemyAnim.enabled = true;
     }
 }

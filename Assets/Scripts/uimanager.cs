@@ -58,6 +58,8 @@ public class uimanager : MonoBehaviour
     public int lifes;
     public List<GameObject> lifeSprites;
 
+    public GameObject endNowPanel;
+
     void Awake()
     {
         if (instance == null)
@@ -693,6 +695,7 @@ public class uimanager : MonoBehaviour
             else
             {
                 CoundownImage.sprite = countDownSprites[4];
+
             }
             // yield return new WaitForSeconds(1f);
             yield return new WaitUntil(() => storePnl.activeInHierarchy == false);
@@ -1127,18 +1130,22 @@ public class uimanager : MonoBehaviour
         }
         if (pause && TrackManager._instance._gameState != GameState.PLAYING)
             return;
-        SfxManager.instance.PlayButtonClick();       
+        SfxManager.instance.PlayButtonClick();
         //header.SetActive(pause);
         enemyAnim.enabled = pause;
         pauseMenu.SetActive(pause);
         if (pause)
         {
-            TrackManager._instance._gameState = GameState.PAUSE;          
+            TrackManager._instance._gameState = GameState.PAUSE;     
+            Timer.instance.startTimer = false;
+
             //MissionManager.instance.OnPausePnlAppear();
         }
         else
         {
             resumeMenu.SetActive(true);
+            //Timer.instance.startTimer = true;
+
         }
 
     }
@@ -1166,7 +1173,15 @@ public class uimanager : MonoBehaviour
        //FirebaseEvents.instance.LogFirebaseEvent("Screen2", "SecondaryScreens", "InDailyChallengePanel");
     }
 
+    public void EnableEndNow()
+    {
+        endNowPanel.SetActive(true);
+    }
 
+    public void CloseEndNow()
+    {
+        endNowPanel.SetActive(false);
+    }
     public void PauseToHome()
     {
         SfxManager.instance.PlayButtonClick();
