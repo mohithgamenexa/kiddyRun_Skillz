@@ -43,11 +43,7 @@ public class PlayerCollisionCntrl : MonoBehaviour
             }
             else if (s == "die" || s == "die2")
             {
-                if(uimanager.instance.lifes > 0 )
-                {
-                    uimanager.instance.GiveLife();
-                }
-                else if (uimanager.instance.powerupArray[3].isActivated || playerScript.mFlying)
+                if (uimanager.instance.powerupArray[3].isActivated || playerScript.mFlying)
                 {
                     return;
                    // TrackManager._instance._gameState = GameState.SAVEME;
@@ -57,7 +53,12 @@ public class PlayerCollisionCntrl : MonoBehaviour
                 }
                 else
                 {
-                    if (uimanager.instance.inChase)
+                    if (uimanager.instance.lifes > 0)
+                    {
+                        Debug.Log("Giving Life");
+                        uimanager.instance.GiveLife();
+                    }
+                    else if (uimanager.instance.inChase)
                     {
                         PlayDeathScene(mTransform.position);
                     }

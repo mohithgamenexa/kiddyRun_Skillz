@@ -54,7 +54,7 @@ public class Timer : MonoBehaviour
     IEnumerator ShowTimeLeft(Sprite spr)
     {
         timeLeftObj.gameObject.SetActive(true);
-        timeLeftObj.sprite = spr;
+        timerImg.sprite = spr;
         //UIFeedback.Instance.PlayHapticMedium();
 
         yield return new WaitForSeconds(1.5f);

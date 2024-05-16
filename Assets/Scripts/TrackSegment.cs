@@ -27,12 +27,10 @@ public class TrackSegment : MonoBehaviour
                   Transform map = null;
                  if (mSpline.pathType == PATHTYPE.JUNCTION && i == 2)
                  {
-                        Debug.Log("Cont..");
                         continue;
                  }
                  else
                  {
-                        Debug.Log("notCont..");
                         //int mapNo = Random.Range(0, envAssets.Length);
                         /*while(mapNo == prvNo)
                         {
