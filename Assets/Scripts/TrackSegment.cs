@@ -10,18 +10,21 @@ public class TrackSegment : MonoBehaviour
     public bool isYjun;
     [HideInInspector]
     public bool isFirstMap;
-    int c = 0;
     public void Start()
     {
         int prvNo = -1;
+      
         if (!isFixedPath)
         {
+           /* if (c > 11)
+                c = 0;*/
             if (mSpline.pathType == PATHTYPE.STRIGHT || mSpline.pathType == PATHTYPE.JUNCTION || mSpline.pathType == PATHTYPE.TUNNEL)
             {
                 
                 int forword = TrackManager._instance.inverse == true ? 1 : 0;
                 ResetMaplist();
                GameObject[] envAssets = getEnvAssets(0);
+                
                for (int i = 0; i < 4; i++)
                {
                   Transform map = null;
@@ -31,16 +34,20 @@ public class TrackSegment : MonoBehaviour
                  }
                  else
                  {
-                        //int mapNo = Random.Range(0, envAssets.Length);
-                        /*while(mapNo == prvNo)
+                        /*int mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
+                        while (mapNo == prvNo)
                         {
                             mapNo = SkillzCrossPlatform.Random.Range(0, envAssets.Length);
                         }*/
-                        prvNo = c;
-                        map = Instantiate(envAssets[c]).transform;
-                        c++;
-                        if (c > envAssets.Length)
-                            c = 0;
+                        if (TrackManager._instance.MapCount >= envAssets.Length)
+                            TrackManager._instance.MapCount = 0;
+                        prvNo = TrackManager._instance.MapCount;
+                        map = Instantiate(envAssets[TrackManager._instance.MapCount]).transform;
+                        Debug.Log("instatiating:" + TrackManager._instance.MapCount);
+                        TrackManager._instance.MapCount++;
+                        
+
+
                  }
                     map.transform.SetParent(this.transform);
                     if (forword == 1)

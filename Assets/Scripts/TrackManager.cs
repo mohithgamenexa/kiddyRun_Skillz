@@ -98,6 +98,8 @@ public class TrackManager : MonoBehaviour
     public TMP_Text levelNo;
 
     public List<int> powerupCount;
+    public int MapCount = 1;
+
     public GameState _gameState
     {
         get
@@ -827,7 +829,6 @@ public class TrackManager : MonoBehaviour
                     float rand = SkillzCrossPlatform.Random.Range(0f,1f);
                     //float rand = 0.4f;
 
-                    Debug.Log("mapturnRand::" + rand);
                     if (rand < 0.25f)
                     {
                         nextTrack = Instantiate(mapJunction, SpawnedObjects);
@@ -871,7 +872,8 @@ public class TrackManager : MonoBehaviour
         return nextTrack;
     }
 
-    int pLvl = 0;   
+    int pLvl = 0;
+    int c = 80;
     int SelectLevel()
     {
         firstRunObs = false;
@@ -889,7 +891,12 @@ public class TrackManager : MonoBehaviour
             lvlNo = SkillzCrossPlatform.Random.Range(81, 104);
         }else if(currentZone == 0)
         {
-            lvlNo = SkillzCrossPlatform.Random.Range(1, 43);
+            lvlNo = SkillzCrossPlatform.Random.Range(1, 104);
+
+            /*lvlNo = c;
+            c++;
+            if (c >= 104)
+                c = 80;*/
 
             /*if (laneLength >= 700)
             {

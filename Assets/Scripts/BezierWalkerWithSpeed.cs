@@ -127,6 +127,11 @@ namespace BezierSolution
             scoreMul += 1;
             //DataManager.instance.ScoreMul = 0;
             uimanager.instance.scoreMul.text = scoreMul + "X";
+            if (scoreMul == 1)
+                uimanager.instance.mulImg.sprite = uimanager.instance.oneXImg;
+            else
+                uimanager.instance.mulImg.sprite = uimanager.instance.twoXImg;
+            //uimanager.instance.mulImg.sprite = uimanager.instance.oneXImg;
             glider.SetActive(false);
             flyingPrtcl.SetActive(false);
             cachedTransform.position = Vector3.right * -2.5f;

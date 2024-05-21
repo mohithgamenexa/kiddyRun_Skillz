@@ -4,6 +4,7 @@ using BezierSolution;
 
 public class PlayerCollisionCntrl : MonoBehaviour
 {
+    public static PlayerCollisionCntrl inst;
     BezierWalkerWithSpeed playerScript;
     string s;
     Transform anim;
@@ -11,6 +12,7 @@ public class PlayerCollisionCntrl : MonoBehaviour
     public ParticleSystem coinPrtCle, PowCol;
     void Start()
     {
+        inst = this;
         playerScript = GetComponent<BezierWalkerWithSpeed>();
         anim = playerScript.anim.transform;
         mTransform = transform;

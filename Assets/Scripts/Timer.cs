@@ -112,6 +112,7 @@ public class Timer : MonoBehaviour
                 timerText.text = "00:00";
                 //GameController.inst.shuffleCardsBtn.GetComponentInChildren<TextMeshProUGUI>().color = GameController.inst.noOfShufflesTextColor;
                 StartCoroutine(ShowTimeUpObj(0));
+                PlayerCollisionCntrl.inst.PlayDeathScene(transform.position);
                 //timerText.gameObject.GetComponent<Animator>().enabled = false;
                 //GamePlayUI.Instance.TryRescueGame(GameOverReason.TIME_OVER);
             }

@@ -56,9 +56,14 @@ public class uimanager : MonoBehaviour
     public Animation intro;
 
     public int lifes;
+    public TextMeshProUGUI lifeTxt;
     public List<GameObject> lifeSprites;
 
     public GameObject endNowPanel;
+    public Image mulImg;
+
+    public Sprite oneXImg;
+    public Sprite twoXImg;
 
     void Awake()
     {
@@ -915,6 +920,10 @@ public class uimanager : MonoBehaviour
                 int mP = ON == true ? 2 : 1;
                 int m = TrackManager._instance.playerScript.scoreMul * TrackManager._instance.playerScript.powMul;
                 scoreMul.text = m + "X";
+                if (m == 1)
+                    mulImg.sprite = oneXImg;
+                else
+                    mulImg.sprite = twoXImg;
                 scoreMul.GetComponent<Animation>().Play();
                 break;
             case 3:
@@ -934,6 +943,11 @@ public class uimanager : MonoBehaviour
     public void SetScoreMul(int mul)
     {
         TrackManager._instance.playerScript.scoreMul = mul;
+        if(mul==1)
+            mulImg.sprite = oneXImg;
+        else
+            mulImg.sprite = twoXImg;
+
         scoreMul.text = mul + "X";
         scoreMul.GetComponent<Animation>().Play();
     }
@@ -971,7 +985,8 @@ public class uimanager : MonoBehaviour
             //header.SetActive(true);
             preGameOveMenu.SetActive(false);
             inGameMenu.SetActive(false);
-            lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
+            //lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
+            
             Debug.Log("Gameover");
             gameoverMenu.SetActive(true);
             /*if (GIftBoxOPen.rewardCount <= 0)
@@ -1065,9 +1080,9 @@ public class uimanager : MonoBehaviour
         int needKeys = 1;//(int)Mathf.Pow(2, deathCount);
         if (lifes >= needKeys)
         {
-            lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
+            //lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
             lifes--;
-
+            lifeTxt.text = (lifes+1).ToString();
 
             if (lastRoutine != null)
                 StopCoroutine(lastRoutine);

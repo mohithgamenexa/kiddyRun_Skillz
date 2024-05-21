@@ -14,6 +14,7 @@ public class PowerupHandler : MonoBehaviour
     public List<GameObject> selectedObjects = new List<GameObject>();
 
     public List<Button> powerupButtons;
+    public List<Sprite> powerupButtonsImgs;
 
     void Awake()
     {
@@ -53,7 +54,18 @@ public class PowerupHandler : MonoBehaviour
 
         for (int i = 0; i < powerupButtons.Count; i++)
         {
-            powerupButtons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = selectedObjects[i].name;
+            //powerupButtons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = selectedObjects[i].name;
+            //powerupButtons[i].GetComponent<Button>().image = selectedObjects[i].GetComponent<Button>().image;
+            if (selectedObjects[i].GetComponent<powerupCntrl>().powerUpType == POWERUPTYPE.DOUBLETHECOIN)
+                powerupButtons[i].GetComponent<Button>().image.sprite = powerupButtonsImgs[0];
+            else if (selectedObjects[i].GetComponent<powerupCntrl>().powerUpType == POWERUPTYPE.POGOSTICK)
+                powerupButtons[i].GetComponent<Button>().image.sprite = powerupButtonsImgs[1];
+            else if (selectedObjects[i].GetComponent<powerupCntrl>().powerUpType == POWERUPTYPE.DOUBLETHESCORE)
+                powerupButtons[i].GetComponent<Button>().image.sprite = powerupButtonsImgs[2];
+            else if (selectedObjects[i].GetComponent<powerupCntrl>().powerUpType == POWERUPTYPE.SPOOKYMODE)
+                powerupButtons[i].GetComponent<Button>().image.sprite = powerupButtonsImgs[3];
+            else if (selectedObjects[i].GetComponent<powerupCntrl>().powerUpType == POWERUPTYPE.MAGNET)
+                powerupButtons[i].GetComponent<Button>().image.sprite = powerupButtonsImgs[4];
         }
     }
 
@@ -90,7 +102,6 @@ public class PowerupHandler : MonoBehaviour
         {
             fillBar.fillAmount = 0;
             collectedCoins = 0;
-            Debug.Log("----");
             activatePowerup = true;
             SelectDisabledButton();
 
