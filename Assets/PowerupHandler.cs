@@ -15,6 +15,7 @@ public class PowerupHandler : MonoBehaviour
 
     public List<Button> powerupButtons;
     public List<Sprite> powerupButtonsImgs;
+    public List<GameObject> rays;
 
     void Awake()
     {
@@ -160,6 +161,8 @@ public class PowerupHandler : MonoBehaviour
         if (inactiveButton != null)
         {
             inactiveButton.interactable = true;
+            int position = powerupButtons.IndexOf(inactiveButton);
+            rays[position].GetComponent<Image>().enabled = true;
         }
         else
         {
@@ -170,6 +173,8 @@ public class PowerupHandler : MonoBehaviour
     public void UsePowerup(int count)
     {
         powerupButtons[count].interactable = false;
+        rays[count].GetComponent<Image>().enabled = false;
+
         int c = (int)selectedObjects[count].GetComponent<powerupCntrl>().powerUpType;
 
         uimanager.instance.PowerUpCollected(c);

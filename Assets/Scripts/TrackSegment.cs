@@ -43,7 +43,7 @@ public class TrackSegment : MonoBehaviour
                             TrackManager._instance.MapCount = 0;
                         prvNo = TrackManager._instance.MapCount;
                         map = Instantiate(envAssets[TrackManager._instance.MapCount]).transform;
-                        Debug.Log("instatiating:" + TrackManager._instance.MapCount);
+                        //Debug.Log("instatiating:" + TrackManager._instance.MapCount);
                         TrackManager._instance.MapCount++;
                         
 

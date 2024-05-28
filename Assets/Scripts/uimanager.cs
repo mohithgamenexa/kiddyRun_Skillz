@@ -10,7 +10,7 @@ using TMPro;
 public class uimanager : MonoBehaviour
 {
     public static uimanager instance;
-    public GameObject gameoverMenu, HighScoreMenu, preGameOveMenu, pauseMenu, lodingMenu,leaderboardpanel, header, resumeMenu, lessCoinMenu, infoMenu, btnContinue, storePnl, settingsPnl, missionPnl, dailyChallengeMenu, vaultMenu,characterspanel;
+    public GameObject howtoPlayPanel,gameoverMenu, HighScoreMenu, preGameOveMenu, pauseMenu, lodingMenu,leaderboardpanel, header, resumeMenu, lessCoinMenu, infoMenu, btnContinue, storePnl, settingsPnl, missionPnl, dailyChallengeMenu, vaultMenu,characterspanel;
     public GameObject OfferIappanel,offeriapbtn1, offeriapbtn1_0, offeriapbtn2, doubleItBtn,removeadsIapBtn,ratepanel;
 
     [Header("Remotepack")]
@@ -1153,6 +1153,8 @@ public class uimanager : MonoBehaviour
         {
             TrackManager._instance._gameState = GameState.PAUSE;     
             Timer.instance.startTimer = false;
+            Debug.Log("pause anim");
+            iTween.ScaleFrom(pauseMenu.gameObject, iTween.Hash("x", 0, "y", 0, "time", 0.5f, "easetype", iTween.EaseType.easeOutBack, "ignoretimescale", true));
 
             //MissionManager.instance.OnPausePnlAppear();
         }
@@ -1191,6 +1193,8 @@ public class uimanager : MonoBehaviour
     public void EnableEndNow()
     {
         endNowPanel.SetActive(true);
+        iTween.ScaleFrom(endNowPanel.gameObject, iTween.Hash("x", 0, "y", 0, "time", 0.5f, "easetype", iTween.EaseType.easeOutBack, "ignoretimescale", true));
+
     }
 
     public void CloseEndNow()
@@ -1404,6 +1408,10 @@ public class uimanager : MonoBehaviour
         Invoke(nameof(CheckAd), 1f);
         //CheckAd();
 
+    }
+    public void OpenHowToPlay()
+    {
+        howtoPlayPanel.SetActive(true);
     }
 
     Vector3 getEmptyPos(Transform player_)

@@ -5,10 +5,11 @@ public class ObstraclePiece : MonoBehaviour
 {   
     public GameObject[] meshes,crMeshes,beachMeshes;
     public GameObject cityObj, CRObj,beachObj,forestObj;
+    public GameObject obstacle;
     int c = 0;
     void Awake()
     {
-        if(cityObj == null && meshes.Length > 0)
+        if(TrackManager._instance.currentZone == 0 && cityObj == null && meshes.Length > 0)
         {
 
             //cityObj = Instantiate(meshes[Random.Range(0, meshes.Length)], transform);
@@ -23,10 +24,13 @@ public class ObstraclePiece : MonoBehaviour
             CRObj = Instantiate(crMeshes[Random.Range(0, crMeshes.Length)], transform);
             CRObj.SetActive(false);
         }
-        if(beachObj == null && beachMeshes.Length > 0)
+        if(TrackManager._instance.currentZone == 1 && beachObj == null && beachMeshes.Length > 0)
         {
+            Debug.Log("Beach Theme Obstacle");
             beachObj = Instantiate(beachMeshes[Random.Range(0, beachMeshes.Length)], transform);
-            beachObj.SetActive(false);
+            obstacle.SetActive(false);
+
+            beachObj.SetActive(true);
         }
         if (cityObj == null && meshes.Length == 0)
         {
