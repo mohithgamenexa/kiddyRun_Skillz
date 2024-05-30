@@ -206,7 +206,7 @@ public class TrackManager : MonoBehaviour
 
         for (int i = 0; i < size; i++)
         {
-            int indexToSwap = UnityEngine.Random.Range(i, size);
+            int indexToSwap = SkillzCrossPlatform.Random.Range(i, size);
             int oldValue = arr[i];
             arr[i] = arr[indexToSwap];
             arr[indexToSwap] = oldValue;
@@ -789,7 +789,7 @@ public class TrackManager : MonoBehaviour
             mapIndx = 0;
             NextZone = 0;
             mapArray = ShuffleArray(mapArray);
-        }
+        } 
         else
         {
             NextZone = mapArray[mapIndx];
@@ -800,12 +800,12 @@ public class TrackManager : MonoBehaviour
     TrackSegment GetTrack()
     {
         TrackSegment nextTrack = null;
-        /*if (lastRunLength >= currentTheme.zones[currentZone].Length)
+        if (lastRunLength >= currentTheme.zones[currentZone].Length)
         {
             lastRunLength = 0;
             Debug.Log("create Tunnel Here");
             //commented by dharma here instantiate tunnel
-            //nextTrack = Instantiate(tunnelMap,SpawnedObjects);
+            nextTrack = Instantiate(tunnelMap,SpawnedObjects);
             strightMapLength = 0;
             setNextZone();
             while (NextZone == currentZone)
@@ -813,8 +813,7 @@ public class TrackManager : MonoBehaviour
                 setNextZone();
             }
         }
-        else */
-        if(currentZone == 4)
+        else if (currentZone == 4)
         {
             nextTrack = Instantiate(railRushMaps[UnityEngine.Random.Range(0, railRushMaps.Length)],SpawnedObjects);
         }
