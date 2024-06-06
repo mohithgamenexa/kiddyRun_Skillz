@@ -184,7 +184,7 @@ public class TrackManager : MonoBehaviour
             }
         }
     }
-    int[] mapArray = new int[] { 1, 2,3,4};
+    int[] mapArray = new int[] { 1, 2,3};
     int mapIndx = 0;
     void Awake()
     {
