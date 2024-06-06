@@ -29,8 +29,10 @@ public class uimanager : MonoBehaviour
     public Animation hedrCoinobj, hedrkeyobj;
     [Header("Text Sources")]
     public TextMeshProUGUI inGameCoinTxt;
-    public TextMeshProUGUI hedrKeyTxt, scoreOnGameOver,lifesOnGameOver, totalscoreOnGameOver,coinOnGameOver,lifesRemainingOnGameOver, keysTxtPGo, hedrCoinTxt, infoTxt, flyTxt;
-    
+    public TextMeshProUGUI hedrKeyTxt,lifesRemainingOnGameOver, keysTxtPGo, hedrCoinTxt, infoTxt, flyTxt;
+    public Text scoreOnGameOver, lifesOnGameOver, totalscoreOnGameOver, coinOnGameOver;
+
+
     public TextMeshProUGUI sMulTxtMission, scoreMul, sMulTxtGameOver;
     public TextMeshProUGUI pGKeyTxt;
     public TextMeshProUGUI coinMul;
@@ -1077,6 +1079,7 @@ public class uimanager : MonoBehaviour
         SfxManager.instance.PlayButtonClick();
         gameoverMenu.SetActive(false);
         header.SetActive(false);
+        Debug.Log("give life");
         int needKeys = 1;//(int)Mathf.Pow(2, deathCount);
         if (lifes >= needKeys)
         {
@@ -1215,7 +1218,7 @@ public class uimanager : MonoBehaviour
         TrackManager._instance.playerScript.StopFlying();
     }
 
-    IEnumerator doubleItTextUpdate(int fromvalue,int tovalue,TextMeshProUGUI txt)
+    IEnumerator doubleItTextUpdate(int fromvalue,int tovalue,Text txt)
     {
         if(fromvalue > 10)
         {
