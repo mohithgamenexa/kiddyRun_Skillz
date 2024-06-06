@@ -29,8 +29,8 @@ public class uimanager : MonoBehaviour
     public Animation hedrCoinobj, hedrkeyobj;
     [Header("Text Sources")]
     public TextMeshProUGUI inGameCoinTxt;
-    public TextMeshProUGUI hedrKeyTxt,lifesRemainingOnGameOver, keysTxtPGo, hedrCoinTxt, infoTxt, flyTxt;
-    public Text scoreOnGameOver, lifesOnGameOver, totalscoreOnGameOver, coinOnGameOver;
+    public TextMeshProUGUI hedrKeyTxt, keysTxtPGo, hedrCoinTxt, infoTxt, flyTxt;
+    public Text scoreOnGameOver, lifesOnGameOver, totalscoreOnGameOver, coinOnGameOver, lifesRemainingOnGameOver;
 
 
     public TextMeshProUGUI sMulTxtMission, scoreMul, sMulTxtGameOver;
@@ -1058,13 +1058,15 @@ public class uimanager : MonoBehaviour
         //hedrCoinTxt.text = "" + DataManager.instance.AddCoin(coinsCltd);
         //hedrKeyTxt.text = "" + DataManager.instance.Keys;
         coinOnGameOver.text = "" + coinsCltd;
-        lifesRemainingOnGameOver.text = "X" + lifes.ToString();
-        lifesOnGameOver.text = "" + lifes;
-        int total = TrackManager._instance.playerScript.m_Score + coinsCltd + (lifes*100);
+        lifesRemainingOnGameOver.text = "X" + (lifes + 1).ToString();
+        lifesOnGameOver.text = "" + ((lifes + 1) * 100);
+        int total = TrackManager._instance.playerScript.m_Score + coinsCltd + ((lifes + 1) * 100);
         totalScore = total;
         totalscoreOnGameOver.text = total.ToString();
 
         deathCount = 0;
+        TryToSubmitScoreToSkillz();
+
     }
 
     public void GiveLife()
