@@ -74,8 +74,13 @@ public class PowerupHandler : MonoBehaviour
     public Image fillBar;
     bool activatePowerup;
 
+    
+
     public void FillSectionBonusBar()
     {
+        if (powerupButtons[0].interactable && powerupButtons[1].interactable && powerupButtons[2].interactable)
+            return;
+
         fillPercent = collectedCoins / 21f;
         //sectionBonusFillImg.fillAmount = fillPercent;
         StartCoroutine(FillImageCoroutine());
