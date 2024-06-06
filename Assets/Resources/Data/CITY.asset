@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zones:
   - name: city
-    Length: 1200
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 1973076532759873444, guid: 7ed83f1f88094f1458ceca47e02b8b0e, type: 3}
@@ -31,7 +31,7 @@ MonoBehaviour:
     - {fileID: 1911677652301100029, guid: 46b29c22b43091146ab6878c27b11e0d, type: 3}
     - {fileID: 2263607248988690595, guid: 0c9a34696c5984c4b86a381174f0109a, type: 3}
   - name: beach
-    Length: 1000
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 5788954133966465189, guid: 34bf7636b28200d45980320071a2e8e1, type: 3}
@@ -40,14 +40,14 @@ MonoBehaviour:
     - {fileID: 662409113284519097, guid: cbb87646ac02d784d81ef10ae7f0e1e9, type: 3}
     - {fileID: 1654497476300686626, guid: 6c3d234b34278a7468aaa079f36953f4, type: 3}
   - name: Construction
-    Length: 1200
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 4748159493124541479, guid: 6ef39ee9d1ea7944b8f78d89fac525b9, type: 3}
     - {fileID: 3407392374549240775, guid: 179e050c4342a4f4dbb93853b5cc386a, type: 3}
     - {fileID: 2409591419295684971, guid: 23c156890d45c5a45a0852f8bac5bb70, type: 3}
   - name: Forest
-    Length: 1200
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 6842245809261574955, guid: db6941bfe368d43908286664a7752417, type: 3}
@@ -55,7 +55,7 @@ MonoBehaviour:
     - {fileID: 8830770546347460608, guid: f384942fefd804469b8edfce0f522cd7, type: 3}
     - {fileID: 7594820311275531812, guid: fcf8d541c86ba42e1b0176eaf8ed2412, type: 3}
   - name: RailRush
-    Length: 1000
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 2416195410006954541, guid: 252569901e9052744be04ecc2fd8f8e9, type: 3}
