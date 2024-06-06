@@ -988,36 +988,29 @@ public class uimanager : MonoBehaviour
             preGameOveMenu.SetActive(false);
             inGameMenu.SetActive(false);
             //lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
+            StartCoroutine(ShowGameOver());
             
-            Debug.Log("Gameover");
-            gameoverMenu.SetActive(true);
-            /*if (GIftBoxOPen.rewardCount <= 0)
-            {
-            }
-            else
-            {
-                giftboxMenu.SetActive(true);
-            }*/
-
-            gameOverMesh.transform.parent.gameObject.SetActive(true);
-            //sMulTxtGameOver.text = "X" + TrackManager._instance.playerScript.scoreMul;
-            /*if(TrackManager._instance.playerScript.m_Score > DataManager.instance.HighScore)
-            {
-                //DataManager.instance.HighScore = TrackManager._instance.playerScript.m_Score;
-                HighScoreMenu.SetActive(true);
-              // PGGC_Manager._instance.OnAddScoretoLeaderBoard(DataManager.instance.HighScore);
-            }
-            else
-            {
-                HighScoreMenu.SetActive(false);
-            }*/
-            TrackManager._instance._gameState = GameState.GAMEOVER;
            //FirebaseEvents.instance.LogFirebaseEvent("Screen5", "FifthScreen", "Revive-gameover");
                 #if UNITY_ANDROID
                   //  PGGC_Manager._instance.SaveToCloud();
                 #endif
         }
 
+    }
+    public GameObject preGameOverPage;
+    IEnumerator ShowGameOver()
+    {
+        yield return new WaitForSeconds(0f);
+        preGameOverPage.SetActive(true);
+        iTween.ScaleFrom(preGameOverPage.transform.GetChild(0).gameObject, iTween.Hash("x", 0, "y", 0, "time", 0.5, "easetype", iTween.EaseType.easeOutBack));
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Gameover");
+        preGameOverPage.SetActive(false);
+        gameoverMenu.SetActive(true);
+        iTween.ScaleFrom(gameoverMenu.transform.GetChild(2).gameObject, iTween.Hash("x", 0, "y", 0, "time", 0.5, "easetype", iTween.EaseType.easeOutBack));
+
+        gameOverMesh.transform.parent.gameObject.SetActive(true);
+        TrackManager._instance._gameState = GameState.GAMEOVER;
     }
 
     public void StoryTellingBtn(TextMeshProUGUI btnTxt)
