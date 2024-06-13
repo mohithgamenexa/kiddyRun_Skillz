@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d346458f93ac8594a80604fd34ff047e
+guid: 5e7aeae5b44062140a2c16bee07ac5dd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Map07
-    second: {fileID: 2100000, guid: b7181d116858cf0438089f6417c15bd4, type: 2}
+      name: Map01
+    second: {fileID: 2100000, guid: 43708d3ec2fef1b40805dc2bc5cbdc4c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert188
-    second: {fileID: 2100000, guid: b7181d116858cf0438089f6417c15bd4, type: 2}
+      name: Map02
+    second: {fileID: 2100000, guid: 3b6ed01f3791b5b428aa0b2963ae3515, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map03
+    second: {fileID: 2100000, guid: 5e4080ac57b4d8041887ab7806244420, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map04
+    second: {fileID: 2100000, guid: 8b38254c5ee3fc24abc9aab5f7edd3b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map05
+    second: {fileID: 2100000, guid: 6c38f0bdb4ff7dd4ea00950c65710f63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map06
+    second: {fileID: 2100000, guid: 3ac2658d81afbe84fa1a51e71fe6328f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
