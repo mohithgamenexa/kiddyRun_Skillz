@@ -72,6 +72,8 @@ MonoBehaviour:
   CRObj: {fileID: 1495153743906809893}
   beachObj: {fileID: 7941973974946933252}
   forestObj: {fileID: 8048942526191729422}
+  forestObjs: []
+  fallingObjects: 0
 --- !u!1 &1495153743906809893
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +447,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8048942526191729422}
-  m_Mesh: {fileID: 4300012, guid: b8d344ccd446d410fa9522e62e4c06f4, type: 3}
+  m_Mesh: {fileID: 9041630257360692012, guid: 0f41eb5806b4f43488f1b3714a9d2a22, type: 3}
 --- !u!23 &8048942526189790670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -466,7 +468,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e314983bb8cdb4a60a049202a03a3b3c, type: 2}
+  - {fileID: 2100000, guid: d0ee65576158f3f4fa9c1cb144d82339, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

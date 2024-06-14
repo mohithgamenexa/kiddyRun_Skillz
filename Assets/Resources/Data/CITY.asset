@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zones:
   - name: city
-    Length: 500
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 1973076532759873444, guid: 7ed83f1f88094f1458ceca47e02b8b0e, type: 3}
@@ -31,7 +31,7 @@ MonoBehaviour:
     - {fileID: 1911677652301100029, guid: 46b29c22b43091146ab6878c27b11e0d, type: 3}
     - {fileID: 3242275332823865168, guid: 3aad6662905ef7445aba7df40a3a7b3a, type: 3}
   - name: beach
-    Length: 500
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 5788954133966465189, guid: 34bf7636b28200d45980320071a2e8e1, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
     - {fileID: 662409113284519097, guid: cbb87646ac02d784d81ef10ae7f0e1e9, type: 3}
     - {fileID: 1654497476300686626, guid: 6c3d234b34278a7468aaa079f36953f4, type: 3}
   - name: Construction
-    Length: 500
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 5934248876459375882, guid: cf8d9d73993af4040a254a79cd8761fe, type: 3}
@@ -52,7 +52,7 @@ MonoBehaviour:
     - {fileID: 5587413396032377536, guid: a5912ff03994adc44a1855b7703409aa, type: 3}
     - {fileID: 8385337355392806959, guid: 85781159cd995244a8887a40676d2cf7, type: 3}
   - name: Forest
-    Length: 500
+    Length: 200
     isContineous: 0
     envAssets:
     - {fileID: 463591499161256910, guid: c2768408154f7cc42ac3b7216b461581, type: 3}

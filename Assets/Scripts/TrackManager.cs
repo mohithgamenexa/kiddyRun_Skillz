@@ -99,6 +99,8 @@ public class TrackManager : MonoBehaviour
 
     public List<int> powerupCount;
     public int MapCount = 1;
+    
+
 
     public GameState _gameState
     {

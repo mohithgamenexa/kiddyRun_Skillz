@@ -7,6 +7,11 @@ public class JungleSpikes : MonoBehaviour
     public bool isSpike;
     Transform target, mTrns;
     bool once = false;
+
+    public bool stone;
+    public bool trunk;
+    public bool swing;
+
     void Start()
     {
         target = TrackManager._instance.playerScript.transform;
@@ -25,8 +30,21 @@ public class JungleSpikes : MonoBehaviour
             once = true;
             if (!isSpike)
             {
-                GetComponent<Animation>()["StonefallRight"].speed = 1;
-                GetComponent<Animation>().Play("StonefallRight");
+                if(stone)
+                {
+                    GetComponent<Animation>()["StonefallRight"].speed = 1;
+                    GetComponent<Animation>().Play("StonefallRight");
+                }
+                else if(trunk)
+                {
+                    GetComponent<Animation>()["NewTrunk"].speed = 1;
+                    GetComponent<Animation>().Play("NewTrunk");
+                }
+                else if(swing)
+                {
+                    GetComponent<Animation>()["HookAnimation"].speed = 1;
+                    GetComponent<Animation>().Play("HookAnimation");
+                }
             }else
                 GetComponent<Animation>().Play();
         } 
@@ -35,8 +53,21 @@ public class JungleSpikes : MonoBehaviour
             once = false;
             if (!isSpike)
             {
-                GetComponent<Animation>()["StonefallRight"].speed = -1;
-                GetComponent<Animation>().Play("StonefallRight");
+                if(stone)
+                {
+                    GetComponent<Animation>()["StonefallRight"].speed = -1;
+                    GetComponent<Animation>().Play("StonefallRight");
+                }
+                else if (trunk)
+                {
+                    GetComponent<Animation>()["NewTrunk"].speed = -1;
+                    GetComponent<Animation>().Play("NewTrunk");
+                }
+                else if (swing)
+                {
+                    GetComponent<Animation>()["HookAnimation"].speed = -1;
+                    GetComponent<Animation>().Play("HookAnimation");
+                }
             }          
         }
     }
