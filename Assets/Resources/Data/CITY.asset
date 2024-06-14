@@ -24,12 +24,12 @@ MonoBehaviour:
     - {fileID: 4635663051516122869, guid: be17afe316a2a11498cc8a28bbaa9f5b, type: 3}
     - {fileID: 8076701613474871139, guid: 7ad8e9508874f3e469c2157e7b983d1c, type: 3}
     - {fileID: 2248722627730042217, guid: 60274f2aafe1c03429f5528782c06b7e, type: 3}
-    - {fileID: 1911677652301100029, guid: 46b29c22b43091146ab6878c27b11e0d, type: 3}
+    - {fileID: 998384150017537059, guid: 1df7ed2757b3625439ad6afb3d7df7f8, type: 3}
+    - {fileID: 8692794682121020037, guid: e28c7002d4ce7884aa6c63f1973d7606, type: 3}
     - {fileID: 6353051193243421936, guid: da9546e98fdd8df46ab8182a781cf07f, type: 3}
     - {fileID: 2263607248988690595, guid: 0c9a34696c5984c4b86a381174f0109a, type: 3}
-    - {fileID: 3242275332823865168, guid: 3aad6662905ef7445aba7df40a3a7b3a, type: 3}
     - {fileID: 1911677652301100029, guid: 46b29c22b43091146ab6878c27b11e0d, type: 3}
-    - {fileID: 2263607248988690595, guid: 0c9a34696c5984c4b86a381174f0109a, type: 3}
+    - {fileID: 3242275332823865168, guid: 3aad6662905ef7445aba7df40a3a7b3a, type: 3}
   - name: beach
     Length: 500
     isContineous: 0
@@ -43,17 +43,26 @@ MonoBehaviour:
     Length: 500
     isContineous: 0
     envAssets:
-    - {fileID: 4748159493124541479, guid: 6ef39ee9d1ea7944b8f78d89fac525b9, type: 3}
-    - {fileID: 3407392374549240775, guid: 179e050c4342a4f4dbb93853b5cc386a, type: 3}
-    - {fileID: 2409591419295684971, guid: 23c156890d45c5a45a0852f8bac5bb70, type: 3}
+    - {fileID: 5934248876459375882, guid: cf8d9d73993af4040a254a79cd8761fe, type: 3}
+    - {fileID: 318176455985787286, guid: b24c76a696f777b419a3732205294b4e, type: 3}
+    - {fileID: 6782545347809383902, guid: 0e6a10c8ecd2b8742895cd75ebe8ff8b, type: 3}
+    - {fileID: 7656165895395261328, guid: fc274b3bf447971489af12e63757c8cb, type: 3}
+    - {fileID: 424359920686757163, guid: fa67b4a53c1900b40bf941a63675c1c0, type: 3}
+    - {fileID: 6759858579448572419, guid: cd4df3cee640ef04bbd6d8a7a5f469cf, type: 3}
+    - {fileID: 5587413396032377536, guid: a5912ff03994adc44a1855b7703409aa, type: 3}
+    - {fileID: 8385337355392806959, guid: 85781159cd995244a8887a40676d2cf7, type: 3}
   - name: Forest
     Length: 500
     isContineous: 0
     envAssets:
-    - {fileID: 6842245809261574955, guid: db6941bfe368d43908286664a7752417, type: 3}
-    - {fileID: 1721689573889781470, guid: 171b75ffb3c88425bb0094de32188f6d, type: 3}
-    - {fileID: 8830770546347460608, guid: f384942fefd804469b8edfce0f522cd7, type: 3}
-    - {fileID: 7594820311275531812, guid: fcf8d541c86ba42e1b0176eaf8ed2412, type: 3}
+    - {fileID: 463591499161256910, guid: c2768408154f7cc42ac3b7216b461581, type: 3}
+    - {fileID: 3576437986054267898, guid: 5a6ed198852760e4c8f7c55b19416045, type: 3}
+    - {fileID: 869796689639776672, guid: e76ce8bade79bd242a34eb7647c3e756, type: 3}
+    - {fileID: 1978445033070026967, guid: 4677bedfeb943b74989fbfc7ae9cdb4e, type: 3}
+    - {fileID: 6865600367249409283, guid: 4d418062b43200c4caf2ce8f57d9eb56, type: 3}
+    - {fileID: 3254411156233583029, guid: 16d797e5a29d01142960c2c460fd5725, type: 3}
+    - {fileID: 3264143231577417973, guid: 3f4e53ca0269d92469f19059cb7280c7, type: 3}
+    - {fileID: 7415037511880815967, guid: 18ad6c21448dcd443b9f1e66d869259a, type: 3}
   curvEnvAssets: []
   rightCurvEnvAssets: []
   Truck: {fileID: 1045313335132020, guid: 58674de69dcaae343b3f2a4528c2a905, type: 3}
