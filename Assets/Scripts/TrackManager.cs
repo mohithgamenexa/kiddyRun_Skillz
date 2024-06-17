@@ -706,8 +706,8 @@ public class TrackManager : MonoBehaviour
     }
     public void ChangeSky()
     {
-        RenderSettings.fogStartDistance = 50;
-        RenderSettings.fogEndDistance = 60;
+        RenderSettings.fogStartDistance = 40;
+        RenderSettings.fogEndDistance = 80;
         GetComponent<WorldCurver>().curveStrength = 0.001f;
 
         if (currentZone == 0)
