@@ -74,6 +74,7 @@ MonoBehaviour:
   forestObj: {fileID: 8048942526191729422}
   forestObjs: []
   fallingObjects: 0
+  forestobjNum: 0
 --- !u!1 &1495153743906809893
 GameObject:
   m_ObjectHideFlags: 0
