@@ -5,9 +5,6 @@ public class ObstraclePiece : MonoBehaviour
 {   
     public GameObject[] meshes,crMeshes,beachMeshes;
     public GameObject cityObj, CRObj,beachObj,forestObj;
-    int a = 0;
-    int b = 0;
-    int c = 0;
     public List<GameObject> forestObjs;
     public bool fallingObjects;
 
@@ -21,27 +18,21 @@ public class ObstraclePiece : MonoBehaviour
         {
 
             //cityObj = Instantiate(meshes[Random.Range(0, meshes.Length)], transform);
-            cityObj = Instantiate(meshes[c], transform);
-            c++;
+            cityObj = Instantiate(meshes[Random.Range(0, meshes.Length)], transform);
+            /*c++;
             if (c > meshes.Length)
-                c = 0;
+                c = 0;*/
             cityObj.SetActive(true);
         }
         if (CRObj == null && crMeshes.Length > 0)
         {
-            CRObj = Instantiate(crMeshes[a], transform);
-            a++;
-            if (a > crMeshes.Length)
-                a = 0;
+            CRObj = Instantiate(crMeshes[Random.Range(0, crMeshes.Length)], transform);
             CRObj.SetActive(false);
         }
-        if(beachObj == null && beachMeshes.Length > 0)
+        if(beachObj == null && beachMeshes.Length > 0 && TrackManager._instance.currentZone == 1)
         {
             Debug.Log("Beach Theme Obstacle");
-            beachObj = Instantiate(beachMeshes[b], transform);
-            b++;
-            if (b > beachMeshes.Length)
-                b = 0;
+            beachObj = Instantiate(beachMeshes[Random.Range(0, beachMeshes.Length)], transform);
             beachObj.SetActive(true);
         }
         if (cityObj == null && meshes.Length == 0)

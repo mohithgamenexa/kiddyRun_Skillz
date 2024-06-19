@@ -412,3 +412,6 @@ MonoBehaviour:
   CRObj: {fileID: 0}
   beachObj: {fileID: 0}
   forestObj: {fileID: 0}
+  forestObjs: []
+  fallingObjects: 0
+  forestobjNum: 0

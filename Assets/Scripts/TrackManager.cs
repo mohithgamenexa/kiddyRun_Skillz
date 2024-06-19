@@ -892,7 +892,7 @@ public class TrackManager : MonoBehaviour
             lvlNo = SkillzCrossPlatform.Random.Range(81, 104);
         }else if(currentZone == 0)
         {
-            lvlNo = SkillzCrossPlatform.Random.Range(1, 104);
+            lvlNo = SkillzCrossPlatform.Random.Range(1, 43);
 
             /*lvlNo = c;
             c++;
