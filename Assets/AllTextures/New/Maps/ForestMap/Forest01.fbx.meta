@@ -47,6 +47,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: F_water
+    second: {fileID: 2100000, guid: 9e501faa2b65f49ddb67111590461f45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: lambert196
     second: {fileID: 2100000, guid: 5587d206ea100624eb1b9fcf1e3f0edc, type: 2}
   - first:
