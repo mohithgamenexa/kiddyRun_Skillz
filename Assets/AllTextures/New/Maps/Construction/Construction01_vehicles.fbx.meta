@@ -3,7 +3,27 @@ guid: b063cb7c117020246913b3effbaf553a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Con_Carrier_mat
+    second: {fileID: 2100000, guid: fb3765c755fa05c4eb7a58da75ea6c04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Con_Concrete_mat
+    second: {fileID: 2100000, guid: a20c9464d6f30194faf08f022ca1eadd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Con_Crane_mat
+    second: {fileID: 2100000, guid: 23887635f02716d4b81c77e9e7e3aaec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Con_Lorry_mat
+    second: {fileID: 2100000, guid: 55b2a8173b332ef4bbb8defb7d5f4a90, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +108,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.005
+    globalScale: 0.5
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
