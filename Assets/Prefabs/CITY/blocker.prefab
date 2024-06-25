@@ -71,6 +71,9 @@ MonoBehaviour:
   CRObj: {fileID: 2278910995388510760}
   beachObj: {fileID: 4537306952179778834}
   forestObj: {fileID: 8048942526191729512}
+  forestObjs: []
+  fallingObjects: 0
+  forestobjNum: 0
 --- !u!1 &665990856122782870
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +446,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9847b0410e773a943a28c3a1ae1f445e, type: 2}
+  - {fileID: 2100000, guid: 580d20288dcad2a42abfdb2cc5e23d54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
