@@ -29,11 +29,11 @@ public class ObstraclePiece : MonoBehaviour
             CRObj = Instantiate(crMeshes[Random.Range(0, crMeshes.Length)], transform);
             CRObj.SetActive(false);
         }
-        if(beachObj == null && beachMeshes.Length > 0 && TrackManager._instance.currentZone == 1)
+        if(beachObj == null && beachMeshes.Length > 0)
         {
             Debug.Log("Beach Theme Obstacle");
             beachObj = Instantiate(beachMeshes[Random.Range(0, beachMeshes.Length)], transform);
-            beachObj.SetActive(true);
+            beachObj.SetActive(false);
         }
         if (cityObj == null && meshes.Length == 0)
         {
