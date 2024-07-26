@@ -1,13 +1,16 @@
-//
-//  GeoComplyClientProtocol.h
-//  GCSDKDomain
-//
-//  Created by Logan on 12/23/19.
-//  Copyright © 2019 GeoComply. All rights reserved.
-//
+/*
+ * © 2012-2023 GeoComply Solutions Inc.
+ * All Rights Reserved.
+ * NOTICE: All information contained herein is, and remains
+ * the property of GeoComply Solutions Inc.
+ * Dissemination, distribution, copying of this information or reproduction
+ * of this material is strictly forbidden unless prior written permission
+ * is obtained from GeoComply Solutions Inc.
+ */
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <GCSDKDomain/GCIntegrationSuggestionDefines.h>
 
 @protocol GCClientDelegate <NSObject>
 
@@ -17,7 +20,7 @@
  @param data Encrypted geolocation data returned from GeoComply Server. For decryption, use
  provided AES KEY & IV.
  */
-- (void)didGeolocationAvailable:(NSString* _Nonnull)data;
+- (void)didGeolocationAvailable:(NSString * _Nonnull)data;
 
 /**
  Tells the delegate a geolocation request is failed.
@@ -26,7 +29,7 @@
  
  @see GCError
  */
-- (void)didGeolocationFailed:(GCError* _Nonnull)error;
+- (void)didGeolocationFailed:(GCError * _Nonnull)error;
 
 @optional
 
@@ -35,7 +38,7 @@
  
  @param message A log message from GeoComply iOS SDK.
  */
-- (void)updateLog:(NSString* _Nullable)message;
+- (void)updateLog:(NSString * _Nullable)message;
 
 /**
  Tells the delegate that Location Service is disabled and whether GeoComply
@@ -56,7 +59,7 @@
  
  @param info The detailed information.
  */
-- (void)didStopUpdating:(NSDictionary* _Nullable)info;
+- (void)didStopUpdating:(NSDictionary * _Nullable)info;
 
 /**
  Telss the delegate that GeoCompoly iOS SDK is asking to display a message to turn
@@ -64,7 +67,7 @@
  
  @param message The message for app to display.
  */
-- (void)didTurnOffBluetooth:(NSString* _Nullable)message;
+- (void)didTurnOffBluetooth:(NSString * _Nullable)message;
 
 @end
 
@@ -92,59 +95,56 @@
 
 - (void)setDelegate:(id<GCClientDelegate> _Nullable)delegate;
 
-- (BOOL)setLicense:(NSString* _Nonnull)license error:(NSError* _Nullable __autoreleasing* _Nullable)errorPtr;
+- (BOOL)setLicense:(NSString * _Nonnull)license error:(NSError * _Nullable __autoreleasing * _Nullable)errorPtr;
 
-- (BOOL)requestGeolocation:(NSError* _Nullable __autoreleasing* _Nullable)error;
+- (BOOL)requestGeolocation:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
-- (BOOL)requestGeolocation:(NSError* _Nullable __autoreleasing* _Nullable)error timeout:(NSInteger)seconds;
+- (BOOL)requestGeolocation:(NSError * _Nullable __autoreleasing * _Nullable)error timeout:(NSInteger)seconds;
 
-+ (id<GeoComplyClientProtocol> _Nonnull)instance;
++ (instancetype _Nonnull)instance;
 
 - (void)handleMemoryWarning;
 
-- (BOOL)startUpdating:(NSError* _Nullable __autoreleasing* _Nullable)error;
+- (BOOL)startUpdating:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 - (void)stopUpdating;
 
 - (BOOL)isUpdating;
 
-- (NSString* _Nullable)currentRequestUUID;
+- (NSString * _Nullable)currentRequestUUID;
 
 - (NSString * _Nonnull)version;
+/**
+ Call this function before calling requestGeolocation or startUpdating to handle the suggestion for your integration steps.
+ @param handler The handler block can emit the advice message multiple times whenever the SDK finds any suggestion for your integration.
+ The handler will not emit any data if your integration is good enough.
+ */
+- (void)handleIntegrationSuggestionWithHandler:(GCIntegrationSuggestionBlock _Nonnull)handler;
 
-+ (void)handleLaunchOptions:(NSDictionary* _Nullable)launchOptions;
++ (void)handleLaunchOptions:(NSDictionary * _Nullable)launchOptions;
+
+- (void)setCarbonUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)carbonApiKey;
 
 @optional
-+ (void)touchesBegan:(NSSet* _Nonnull)touches withEvent:(UIEvent* _Nonnull)event onView:(UIView* _Nonnull)view;
 
-- (void)setUserSessionID:(NSString* _Nullable)userSessionID;
++ (void)touchesBegan:(NSSet * _Nonnull)touches
+           withEvent:(UIEvent * _Nonnull)event
+              onView:(UIView* _Nonnull)view;
 
-- (NSString *_Nullable)currentUserSessionID;
+- (void)setUserSessionID:(NSString * _Nullable)userSessionID;
+
+- (NSString * _Nullable)currentUserSessionID;
 
 - (void)invalidateUserSession;
 
 - (BOOL)isGeolocationInProgress;
 
 - (void)cancelCurrentGeolocationReason:(GCCancelReason)reason
-                              details:(NSString* _Nullable)details
-                           completion:(void(^ _Nonnull)(BOOL success, NSString* _Nullable description))completion;
+                               details:(NSString * _Nullable)details
+                            completion:(void(^ _Nonnull)(BOOL success, NSString * _Nullable description))completion;
 
-- (void)setGameCode:(GCGameCode)gameCode;
+- (void)setReasonCode:(GCReasonCode * _Nullable)reasonCode;
 
-- (void)setReasonCode:(GCReasonCode)reasonCode;
+- (GCReasonCode * _Nullable)reasonCode;
 
-- (GCReasonCode)reasonCode;
-
-- (GCGameCode)gameCode;
 @end
-
-@protocol GeoComplyMultipleSDKProtocol <NSObject>
-- (void)useSDKVersion:(NSString * _Nonnull)version error:(NSError* _Nullable __autoreleasing* _Nullable)error;
-
-- (NSString * _Nonnull)currentUsingSDKVersion;
-
-+ (void)handleLaunchOptions:(NSDictionary* _Nullable)launchOptions sdkVersion:(NSString* _Nonnull)sdkVersion;
-
-+ (void)touchesBegan:(NSSet* _Nonnull)touches withEvent:(UIEvent* _Nonnull)event onView:(UIView* _Nonnull)view sdkVersion:(NSString* _Nonnull)sdkVersion;
-@end
-

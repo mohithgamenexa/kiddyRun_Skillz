@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: skillz-settings-v2
   m_EditorClassIdentifier: 
   GameID: 23485
-  Environment: 0
+  Environment: 1
   Orientation: 1
   IsDebugMode: 0
   AllowSkillzExit: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
   ProgressionResponsesTemplate: {fileID: 11400000, guid: 0561efa99a8e54fcaa4176f3eeaf3287,
     type: 2}
   SeasonsTemplate: {fileID: 11400000, guid: a562fa0df35f6417981453395094306c, type: 2}
-  Score: 
+  Score: 366
   IsLeavingProgressionRoom: 0
   IsLaunching: 0
   hasSetSIDEkickDefaults: 1

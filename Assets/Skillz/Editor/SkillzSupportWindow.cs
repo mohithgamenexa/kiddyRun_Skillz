@@ -74,7 +74,7 @@ public sealed class SkillzSupportWindow : EditorWindow
     EditorGUI.indentLevel++;
     EditorGUILayout.Space();
 
-    EditorGUILayout.LabelField("Version: 29.2.22", textStyle);
+    EditorGUILayout.LabelField("Version: 2024.0.25", textStyle);
   }
 
   private void RenderLinkButton(string label, string url)

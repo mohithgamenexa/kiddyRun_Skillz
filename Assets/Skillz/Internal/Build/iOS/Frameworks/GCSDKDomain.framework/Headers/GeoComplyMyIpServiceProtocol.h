@@ -1,9 +1,12 @@
-//
-//  GeoComplyMyIpServiceProtocol.h
-//  GCClient
-//
-//  Created by Sang Nguyen on 19/05/2021.
-//
+/*
+ * © 2012-2023 GeoComply Solutions Inc.
+ * All Rights Reserved.
+ * NOTICE: All information contained herein is, and remains
+ * the property of GeoComply Solutions Inc.
+ * Dissemination, distribution, copying of this information or reproduction
+ * of this material is strictly forbidden unless prior written permission
+ * is obtained from GeoComply Solutions Inc.
+ */
 
 #import <Foundation/Foundation.h>
 
@@ -38,8 +41,8 @@ typedef void (^MyIpServiceFailureHandler)(GCMyIpError *error);
  @param onMyIpSuccess  It is called when MyIP service detects IP change. @see MyIpServiceSuccessHandler.
  @param onMyIpFailure  It is called when MyIP service gets an error. @see MyIpServiceFailureHandler.
  */
-- (void)startMyIpServiceWithSuccess:(nonnull MyIpServiceSuccessHandler)onMyIpSuccess
-                            failure:(nonnull MyIpServiceFailureHandler)onMyIpFailure;
+- (void)startMyIpServiceWithSuccess:(MyIpServiceSuccessHandler _Nonnull)onMyIpSuccess
+                            failure:(MyIpServiceFailureHandler _Nonnull)onMyIpFailure;
 
 /**
  Stops MyIP service.

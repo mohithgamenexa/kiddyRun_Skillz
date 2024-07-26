@@ -989,11 +989,14 @@ public class uimanager : MonoBehaviour
             inGameMenu.SetActive(false);
             //lifeSprites[lifes].gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .2f);
             StartCoroutine(ShowGameOver());
-            
-           //FirebaseEvents.instance.LogFirebaseEvent("Screen5", "FifthScreen", "Revive-gameover");
-                #if UNITY_ANDROID
+            if (UnityAdsManager.instance)
+            {
+                UnityAdsManager.instance.ShowAd();
+            }
+            //FirebaseEvents.instance.LogFirebaseEvent("Screen5", "FifthScreen", "Revive-gameover");
+#if UNITY_ANDROID
                   //  PGGC_Manager._instance.SaveToCloud();
-                #endif
+#endif
         }
 
     }
@@ -1005,12 +1008,15 @@ public class uimanager : MonoBehaviour
         iTween.ScaleFrom(preGameOverPage.transform.GetChild(0).gameObject, iTween.Hash("x", 0, "y", 0, "time", 0.5, "easetype", iTween.EaseType.easeOutBack));
         yield return new WaitForSeconds(2f);
         Debug.Log("Gameover");
+        
         preGameOverPage.SetActive(false);
         gameoverMenu.SetActive(true);
         iTween.ScaleFrom(gameoverMenu.transform.GetChild(2).gameObject, iTween.Hash("x", 0, "y", 0, "time", 0.5, "easetype", iTween.EaseType.easeOutBack));
 
         gameOverMesh.transform.parent.gameObject.SetActive(true);
         TrackManager._instance._gameState = GameState.GAMEOVER;
+
+        
     }
 
     public void StoryTellingBtn(TextMeshProUGUI btnTxt)

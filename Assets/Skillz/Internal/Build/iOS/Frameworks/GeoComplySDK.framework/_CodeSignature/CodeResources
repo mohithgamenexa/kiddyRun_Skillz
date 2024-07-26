@@ -6,19 +6,23 @@
 	<dict>
 		<key>Headers/GeoComplyClient.h</key>
 		<data>
-		qkMWYzIFZVN0El857YxtJPhsSC0=
+		0IeEvNLCpSacv61qFXSPt+55aGw=
 		</data>
 		<key>Headers/GeoComplySDK.h</key>
 		<data>
-		+t6QCDovhGwKO0/Xg5Emm31ZxU8=
+		tMVTWe7EtRNX0LODUAIX/Y84GD8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		P3tCjJILUukJlcLw7sg72m7AOqg=
+		+mCAUhRFC6leeRt/UVJB2jX3NUw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		Iq0MlxIvHMNuOl+2YqiB4Q1OSok=
+		dyoPIVpICP9l7yqyOzZCmEw/hZI=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		AL1dh5ctObXBjoBiabSJ86M3HQs=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -27,21 +31,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uv59DatIvaoQJLDhj45Uh/OcYy7QSO8osSjNFvCiYUU=
+			tFtd67yqw+/afl8wwRlJgMxcKRR6qaQNb7+XhXDoNP8=
 			</data>
 		</dict>
 		<key>Headers/GeoComplySDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HXzf6fljS7FPhsXzIjJh6MJbp+38d11bIMn2r5jmlLU=
+			b7n809s44iY4yr9nNFAKfEVwcHFdEdTjKcWDc4yHAq4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			18F6qEJ5Tl/3NmwSCDLjB6A12YFQwES0OCyKwrz0t9k=
+			Fe3T/Xr1sKn/HueMczaZ3zHSHp+dy5jomCq1fP+hyRM=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WpuPwM3bECAbtHzCgEs/AExyUUdmItJb/E61TtRuEIQ=
 			</data>
 		</dict>
 	</dict>

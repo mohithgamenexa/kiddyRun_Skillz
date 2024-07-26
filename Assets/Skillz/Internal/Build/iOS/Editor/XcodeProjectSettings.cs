@@ -90,7 +90,7 @@ namespace SkillzSDK.Internal.Build.iOS
 
 			AddFramework("GCSDKDomain.framework", mainTarget);
 			AddFramework("GeoComplySDK.framework", mainTarget);
-			AddFramework("GeoComplySDK280.framework", mainTarget);
+			AddFramework("GeoComplySDK2110.framework", mainTarget);
 
 			AddFrameworksCore();
 		}

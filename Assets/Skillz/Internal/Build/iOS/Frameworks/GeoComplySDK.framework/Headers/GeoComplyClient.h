@@ -1,38 +1,41 @@
-//
-//  GeoComplyCient.h
-//  GCClient
-//
-//  Created by Logan on 12/24/19.
-//
+/*
+ * © 2012-2023 GeoComply Solutions Inc.
+ * All Rights Reserved.
+ * NOTICE: All information contained herein is, and remains
+ * the property of GeoComply Solutions Inc.
+ * Dissemination, distribution, copying of this information or reproduction
+ * of this material is strictly forbidden unless prior written permission
+ * is obtained from GeoComply Solutions Inc.
+ */
 
 #import <Foundation/Foundation.h>
 #import <GCSDKDomain/GCSDKDomain.h>
 
-@interface GeoComplyClient : NSObject <GeoComplyClientProtocol, GeoComplyMultipleSDKProtocol, GeoComplyMyIpServiceProtocol>
+@interface GeoComplyClient : NSObject <GeoComplyClientProtocol, GeoComplyMyIpServiceProtocol>
 
 #pragma mark - GeoComplyClientProtocol
 
 /**
  Sets or return current user id for geolocation request.
  */
-@property (nonatomic, copy, nullable) NSString* userId;
+@property (nonatomic, copy, nullable) NSString *userId;
 
 /**
  Sets or return geolocation reason for geolocation request.
  */
-@property (nonatomic, copy, nullable) NSString* geolocationReason;
+@property (nonatomic, copy, nullable) NSString *geolocationReason;
 
 /**
  Sets or return user phone number for geolocation request.
  */
-@property (nonatomic, copy, nullable) NSString* userPhoneNumber;
+@property (nonatomic, copy, nullable) NSString *userPhoneNumber;
 
 /**
  Sets or return GCCustomFields for geolocation request.
  
  @see GCCustomFields.
  */
-@property (nonatomic, readonly, nullable) GCCustomFields* customFields;
+@property (nonatomic, readonly, nullable) GCCustomFields *customFields;
 
 /**
  Sets or returns protocol for GCClientDelegate.
@@ -40,7 +43,6 @@
  @see GCClientDelegate.
  */
 @property (nonatomic, weak, nullable) id<GCClientDelegate> delegate;
-
 
 /**
  Please use the +instance method to create an instance for GeoComplyClient instead of the -init method.
@@ -57,7 +59,7 @@
  
  @return A boolean to indicate whether the license has been set successfully.
  */
-- (BOOL)setLicense:(nonnull NSString*)license error:(NSError* _Nullable __autoreleasing* _Nullable)errorPtr;
+- (BOOL)setLicense:(nonnull NSString *)license error:(NSError * _Nullable __autoreleasing * _Nullable)errorPtr;
 
 /**
  Calls a geolocation request.
@@ -66,7 +68,7 @@
  
  @return A boolean to indicate whether the geolocation request is called successfully.
  */
-- (BOOL)requestGeolocation:(NSError* _Nullable __autoreleasing* _Nullable)error;
+- (BOOL)requestGeolocation:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 /**
  Calls a geolocation request with timeout.
@@ -79,14 +81,21 @@
  @warning If timeout value is equal to 0, GeoComply iOS SDK will use timeout value configured on GeoComply Server.
  This is equivalent to -requestGeolocation:
   */
-- (BOOL)requestGeolocation:(NSError* _Nullable __autoreleasing* _Nullable)error timeout:(NSInteger)timeout;
+- (BOOL)requestGeolocation:(NSError * _Nullable __autoreleasing * _Nullable)error timeout:(NSInteger)timeout;
+
+/**
+ When the Engine is down, Carbon Service will be chosen to handle geolocation requests.
+ @param url A Carbon Service url.
+ @param carbonApiKey A carbonApiKey for Carbon Service authorize.
+ */
+- (void)setCarbonUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)carbonApiKey;
 
 /**
  Creates and returns a GeoComplyClient object.
  
  @warning The returned object is a singleton.
  */
-+ (id<GeoComplyClientProtocol, GeoComplyMultipleSDKProtocol, GeoComplyMyIpServiceProtocol> _Nonnull)instance;
++ (instancetype _Nonnull)instance;
 
 /**
  Handles memory warning notification.
@@ -102,7 +111,7 @@
  
  @warning Calls this method will auto reschedule next indoor geolocation updates. No further scheduling is required.
  */
-- (BOOL)startUpdating:(NSError* _Nullable __autoreleasing* _Nullable)error;
+- (BOOL)startUpdating:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 /**
  Stops indoor geolocation updates.
@@ -125,37 +134,26 @@
  
  @see -requestGeolocation:.
  */
-- (nullable NSString*)currentRequestUUID;
+- (NSString * _Nullable)currentRequestUUID;
 
 /**
  Return the SDK version.
  */
-- (NSString *_Nonnull)version;
-
-
-#pragma mark - GeoComplyMultipleSDKProtocol
+- (NSString * _Nonnull)version;
 
 /**
- Select the sdk version for using.
+ Call this function to handle the suggestion from the SDK in case missing any integration step.
  
- @param version A version string.
- 
- @warning If version is not equal to any sdk version inside this sdk, GeoComply iOS sdk will return error. Otherwise, GeoComply iOS SDK will using  the version as expected. Unless User set the version, GeoComply iOS SDK will use the oldest version by default.
+ @warning It is only available in version 2.10.0 & above.
  */
-- (void)useSDKVersion:(NSString* _Nonnull)version error:(NSError* _Nullable __autoreleasing* _Nullable)error;
-
-/**
- Returns the current SDK that is using.
- */
-- (NSString* _Nonnull)currentUsingSDKVersion;
+- (void)handleIntegrationSuggestionWithHandler:(GCIntegrationSuggestionBlock _Nonnull)handler;
 
 /**
  Handle launch options when the app is woken up from suspended state
  
  @param launchOptions The launch options dictionary which is passed into app's delegate methods.
- @param sdkVersion The SDK version that handles the event.
  */
-+ (void)handleLaunchOptions:(NSDictionary* _Nullable)launchOptions sdkVersion:(NSString* _Nonnull)sdkVersion;
++ (void)handleLaunchOptions:(NSDictionary * _Nullable)launchOptions;
 
 /**
  Handle touch events to detect remote control transactions.
@@ -169,7 +167,7 @@
     @implementation MyAppButton
  
     - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-        [GeoComplyClient touchesBegan:touches withEvent:event onView:self sdkVersion:@"2.8.0"];
+        [GeoComplyClient touchesBegan:touches withEvent:event onView:self];
         [super touchesBegan:touches withEvent:event]
     }
  
@@ -178,14 +176,15 @@
  @param touches       Returned from -touchesBegan:withEvent:
  @param event           Returned from -touchesBegan:withEvent:
  @param view             The view that handles the method -touchesBegan:withEvent:
- @param sdkVersion The current SDK version that app is using
  */
-+ (void)touchesBegan:(NSSet* _Nonnull)touches withEvent:(UIEvent* _Nonnull)event onView:(UIView* _Nonnull)view sdkVersion:(NSString * _Nonnull)sdkVersion;
++ (void)touchesBegan:(NSSet * _Nonnull)touches
+           withEvent:(UIEvent * _Nonnull)event
+              onView:(UIView * _Nonnull)view;
 
 /**
  Sets the user session id for geolocation request.
  */
-- (void)setUserSessionID:(NSString* _Nullable)userSessionID;
+- (void)setUserSessionID:(NSString * _Nullable)userSessionID;
 
 /**
  Return the current user session id.
@@ -196,6 +195,7 @@
  Invalidate the current user session id.
  */
 - (void)invalidateUserSession;
+
 
 #pragma mark - GeoComplyMyIpServiceProtocol
 
@@ -210,8 +210,8 @@
  @param onMyIpSuccess  It is called when MyIP service detects IP change. @see MyIpServiceSuccessHandler.
  @param onMyIpFailure  It is called when MyIP service gets an error. @see MyIpServiceFailureHandler.
  */
-- (void)startMyIpServiceWithSuccess:(nonnull MyIpServiceSuccessHandler)onMyIpSuccess
-                            failure:(nonnull MyIpServiceFailureHandler)onMyIpFailure;
+- (void)startMyIpServiceWithSuccess:(MyIpServiceSuccessHandler _Nonnull)onMyIpSuccess
+                            failure:(MyIpServiceFailureHandler _Nonnull)onMyIpFailure;
 
 /**
  Stops MyIP service.
@@ -224,6 +224,7 @@
  Calls this method to acknowledge receipt of an IP address change.
  */
 - (void)ackMyIpSuccess;
+
 
 #pragma mark - Cancel ongoing geolocation
 
@@ -242,45 +243,28 @@
  @warning It  is only available in version 2.7.0+.
  */
 - (void)cancelCurrentGeolocationReason:(GCCancelReason)reason
-                              details:(NSString* _Nullable)details
-                           completion:(void(^ _Nonnull)(BOOL success, NSString* _Nullable description))completion;
+                               details:(NSString * _Nullable)details
+                            completion:(void(^ _Nonnull)(BOOL success, NSString * _Nullable description))completion;
 
-#pragma mark - Reason Code & Game Code
+
+#pragma mark - Reason Code
 
 /**
  Set reason code value for geolocation request.
  
  @param reasonCode  A reason code enum for setting value.
  
- @warning It is only available in version 2.8.0+.
+ @warning It is only available in version 2.9.0+.
  */
-- (void)setReasonCode:(GCReasonCode)reasonCode;
-
-/**
- Set game code value for geolocation request.
- 
- @param gameCode  A game code enum for setting value.
- 
- @warning It is only available in version 2.8.0+.
- */
-- (void)setGameCode:(GCGameCode)gameCode;
+- (void)setReasonCode:(GCReasonCode * _Nullable)reasonCode;
 
 /**
  Get current reason code value.
  
  @return GCReasonCode, which is a reaon code enum is equal to current value if it is not nil. Otherwise, returned value is 0.
  
- @warning It is only available in version 2.8.0+.
+ @warning It is only available in version 2.9.0+.
  */
-- (GCReasonCode)reasonCode;
-
-/**
- Get current game code value.
- 
- @return GCGameCode, which is a game code enum is equal to current value if it is not nil. Otherwise, returned value is GCGameCodeOther.
- 
- @warning It is only available in version 2.8.0+.
- */
-- (GCGameCode)gameCode;
+- (GCReasonCode * _Nullable)reasonCode;
 
 @end

@@ -185,7 +185,7 @@ namespace SkillzSDK.Internal.Build.Android
 
 				ExcludeReactFromScrollView(buildDotGradle);
 				ExcludeReactAAR(buildDotGradle);
-
+				ExcludeExampleFromGestureHandler(buildDotGradle);
 				PatchFirebaseLocalRepoPath(buildDotGradle);
 
 				RemoveMoatRepository(buildDotGradle);
@@ -198,6 +198,14 @@ namespace SkillzSDK.Internal.Build.Android
 			const string cardIoGroup = "io.card";
 
 			buildDotGradle.ExcludeItemFromDependency(cardIoGroup, paypalPackage);
+		}
+
+		private void ExcludeExampleFromGestureHandler(BuildDotGradle buildDotGradle)
+		{
+			const string gesturePackage = "com.swmansion.gesturehandler:react-native-gesturehandler";
+			const string exampleGroup = "Example";
+
+			buildDotGradle.ExcludeItemFromDependency(exampleGroup, gesturePackage);
 		}
 
 		private void ExcludeCardIoAAR(BuildDotGradle buildDotGradle)
