@@ -10,4 +10,14 @@ public class MenuScene : MonoBehaviour
         SkillzCrossPlatform.LaunchSkillz();
     }
 
+#if UNITY_ANDROID
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+#endif
+
 }

@@ -7,7 +7,7 @@ dependencies {
 }
 
 android {
-	compileSdkVersion 33
+	compileSdkVersion 34
 
 	configurations.all {
 		resolutionStrategy.force 'androidx.multidex:multidex:2.0.1'
@@ -20,7 +20,7 @@ android {
 
 	defaultConfig {
 		minSdkVersion 24
-		targetSdkVersion 33
+		targetSdkVersion 34
 		applicationId '**APPLICATIONID**'
 		ndk {
 			abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
